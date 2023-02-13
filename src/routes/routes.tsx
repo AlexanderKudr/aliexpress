@@ -30,3 +30,13 @@ export const router = createBrowserRouter([
     element: <Root />, //todo: add dashboard from pages
   },
 ]);
+// [
+//   {
+//     path: "/category/:id",
+//     element: <Root />, //todo: add category from pages
+//   },
+//   {
+//     path: "/product/:id",
+//     element: <Root />, //todo: add product from pages
+//   },
+// ],
