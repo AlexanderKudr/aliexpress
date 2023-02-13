@@ -4,7 +4,7 @@ export default function ErrorPage() {
   return (
     <>
       <Navbar />
-      <div>Error here!</div>
+      <div className="test">Error here!</div>
     </>
   );
 }
