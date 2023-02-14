@@ -2,11 +2,13 @@
 //ff aka font-family
 $ff-roboto: "Roboto", sans-serif;
 //fw aka font-weight
+$fw-300: 300;
 $fw-400: 400;
 $fw-500: 500;
 $fw-700: 700;
 
 //types of fonts, use these below
+$fw-thin: $fw-300;
 $fw-default: $fw-400;
 $fw-semi-bold: $fw-500;
 $fw-bold: $fw-700;

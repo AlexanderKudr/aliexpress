@@ -7,7 +7,7 @@ export default function Navbar() {
     <Section className="nav-section">
       <div>
         <Icons.Logo />
-        <h1 className="logo-text">AlexShop</h1>
+        <h1>AlexShop</h1>
       </div>
       <div>
         <h2>Category</h2>
@@ -19,7 +19,7 @@ export default function Navbar() {
       </div>
       <Icons.DividerY />
       <div>
-        <h2>Home</h2>
+        <h2>About us</h2>
       </div>
     </Section>
   );

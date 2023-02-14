@@ -1,20 +1,51 @@
 @use "../abstracts/" as *;
 
+%logo-text {
+  margin-left: 10px;
+  letter-spacing: 1.2px;
+  background: -webkit-linear-gradient(170deg, $clr-red-300, $clr-blue-200);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 nav {
   @include flex(flex, center, space-around);
-  height: 80px;
-  box-shadow: 0px 2px 5px 0 $clr-dblack-800;
+  height: 70px;
+  box-shadow: 0px 1px 5px 0 $clr-dgrey-500;
   width: 100%;
   margin-bottom: 30px;
+
   .nav-section {
-    .logo-text {
-      margin-left: 10px;
-    }
+    @include flex(flex, center, center);
+
     & > div {
       @include flex(flex, center, center);
       margin: 0 10px;
       cursor: pointer;
+
+      & > h1 {
+        @extend %logo-text;
+      }
+
+      & > h2 {
+        font-size: $fs-sm;
+        color: $clr-grey-300;
+        transition: all 0.2s;
+      }
+
+      &:hover > h2 {
+        color: $clr-dgrey-600;
+      }
+
+      .nav-section-svg {
+        fill: $clr-grey-300;
+        transition: all 0.2s;
+      }
+
+      &:hover .nav-section-svg {
+        fill: $clr-dgrey-600;
+      }
     }
-    @include flex(flex, center, center);
   }
 }

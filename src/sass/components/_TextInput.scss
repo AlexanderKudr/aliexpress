@@ -4,18 +4,22 @@
   &-nav {
     display: inline-block;
     margin: 0 5px;
-    width: 30vw;
-    label {
+    width: 25vw;
+    & > label {
       border: 1px solid $clr-grey-200;
       border-radius: 30px;
-      padding: 10px;
+      padding: 8px 10px;
       width: 100%;
       @include flex(flex, center, space-between);
-      input {
+      & > input {
         border: none;
         outline: none;
         padding-left: 10px;
         width: 100%;
+        &::placeholder {
+          font-weight: $fw-thin;
+          opacity: 0.5;
+        }
       }
     }
   }
