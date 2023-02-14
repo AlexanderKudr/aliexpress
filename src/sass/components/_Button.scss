@@ -1,0 +1,23 @@
+@use "../abstracts/" as *;
+
+.Button {
+  &-back-to-home {
+    all: unset;
+    box-shadow: 0px 1px 3px 1px $clr-dblack-800;
+    background-color: $clr-blue-300;
+    color: $clr-white;
+    border-radius: 5px;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    font-size: $fs-sm;
+    transition: all 0.2s;
+    cursor: pointer;
+    &:active {
+      transform: translateY(1px);
+    }
+    &:hover {
+      box-shadow: 0px 1px 3px 1px $clr-purple-200;
+    }
+  }
+}

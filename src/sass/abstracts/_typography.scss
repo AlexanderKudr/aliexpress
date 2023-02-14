@@ -1,15 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
+//ff aka font-family
 $ff-roboto: "Roboto", sans-serif;
-
+//fw aka font-weight
 $fw-400: 400;
 $fw-500: 500;
 $fw-700: 700;
 
+//types of fonts, use these below
 $fw-default: $fw-400;
 $fw-semi-bold: $fw-500;
 $fw-bold: $fw-700;
-
+//font sizes (default value is 16px)
+$fs-xs: 0.5rem;
+$fs-sm: 0.8rem;
 $fs-1: 1rem;
 $fs-2: 1.125rem;
 $fs-3: 1.5rem;
