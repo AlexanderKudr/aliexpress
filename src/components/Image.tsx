@@ -1,9 +1,5 @@
-type Image = {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-};
-export default function Image({ ...props }: Image) {
+import { Image as props } from "../types/components";
+
+export default function Image({ ...props }: props) {
   return <img {...props} />;
 }

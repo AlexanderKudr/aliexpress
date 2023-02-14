@@ -1,7 +1,9 @@
-export default function Button() {
+import { Button as props } from "../types/components";
+
+export default function Button({ className, text }: props) {
   return (
-    <>
-      <div>Button</div>
-    </>
+    <button type="button" className={className}>
+      {text}
+    </button>
   );
 }

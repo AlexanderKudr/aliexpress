@@ -1,13 +1,10 @@
 import { Icons } from "../components/icons";
 import TextInput from "../components/TextInput";
-
-type ReactNode = { children?: React.ReactNode };
+import Section from "../components/Section";
 
 export default function Navbar() {
-  const Section = ({ children }: ReactNode) => <section className={`section`}>{children}</section>;
-
   const leftSection = (
-    <Section>
+    <Section className="nav-section">
       <div>
         <Icons.Logo />
         <h1 className="logo-text">AlexShop</h1>
@@ -27,7 +24,7 @@ export default function Navbar() {
     </Section>
   );
   const rightSection = (
-    <Section>
+    <Section className="nav-section">
       <TextInput />
       <div>
         <Icons.Account />
@@ -40,11 +37,9 @@ export default function Navbar() {
     </Section>
   );
   return (
-    <>
-      <nav>
-        {leftSection}
-        {rightSection}
-      </nav>
-    </>
+    <nav>
+      {leftSection}
+      {rightSection}
+    </nav>
   );
 }

@@ -4,9 +4,9 @@ export default function Chevron() {
       <path
         d="M17 10L12 15L7 10"
         stroke="#9A9A9A"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

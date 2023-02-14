@@ -1,11 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../pages/Root";
-import ErrorPage from "../pages/ErrorPage";
+import Error from "../pages/Error";
+import Profile from "../pages/Profile";
+
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <ErrorPage />,
+    errorElement: <Error />,
     children: [
       {
         path: "/category/:id",
@@ -29,14 +31,9 @@ export const router = createBrowserRouter([
     path: "/dashboard",
     element: <Root />, //todo: add dashboard from pages
   },
+  {
+    path: "/profile",
+    element: <Profile />,
+  },
 ]);
-// [
-//   {
-//     path: "/category/:id",
-//     element: <Root />, //todo: add category from pages
-//   },
-//   {
-//     path: "/product/:id",
-//     element: <Root />, //todo: add product from pages
-//   },
-// ],
+
