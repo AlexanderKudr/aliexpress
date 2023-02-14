@@ -7,10 +7,10 @@ nav {
   width: 100%;
   margin-bottom: 30px;
   .section {
-    h1 {
+    .logo-text {
       margin-left: 10px;
     }
-    div {
+    & > div {
       @include flex(flex, center, center);
       margin: 0 10px;
       cursor: pointer;

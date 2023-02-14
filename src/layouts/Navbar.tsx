@@ -10,7 +10,7 @@ export default function Navbar() {
     <Section>
       <div>
         <Icons.Logo />
-        <h1>AlexShop</h1>
+        <h1 className="logo-text">AlexShop</h1>
       </div>
       <div>
         <h2>Category</h2>
