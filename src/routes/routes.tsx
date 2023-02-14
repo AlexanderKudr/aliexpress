@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../pages/Root";
 import ErrorPage from "../pages/ErrorPage";
+import SignUpPage from "../pages/SignUp";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -19,7 +20,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/user/signup",
-    element: <Root />, //todo: add signup from pages
+    element: <SignUpPage/>, //todo: add signup from pages
   },
   {
     path: "/user/login",

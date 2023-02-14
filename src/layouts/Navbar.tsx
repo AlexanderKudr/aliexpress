@@ -1,5 +1,6 @@
 import { Icons } from "../components/icons";
 import TextInput from "../components/TextInput";
+import { Link } from "react-router-dom";
 
 type ReactNode = { children?: React.ReactNode };
 
@@ -8,10 +9,12 @@ export default function Navbar() {
 
   const leftSection = (
     <Section>
+       <Link to='/'>
       <div>
-        <Icons.Logo />
+     <Icons.Logo />
         <h1>AlexShop</h1>
       </div>
+      </Link>
       <div>
         <h2>Category</h2>
         <Icons.Chevron />
@@ -22,7 +25,7 @@ export default function Navbar() {
       </div>
       <Icons.DividerY />
       <div>
-        <h2>Home</h2>
+        <h2><Link to='/'>Home</Link></h2>
       </div>
     </Section>
   );
