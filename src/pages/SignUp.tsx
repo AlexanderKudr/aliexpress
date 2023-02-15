@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Icons } from "../components/icons";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import img1 from '../assets/images/signup-pic-1-2.jpg'
 import img2 from '../assets/images/sigup-picture-1-1.jpg'
 import img3 from '../assets/images/signup-pic-1-3.jpg'
@@ -20,8 +20,6 @@ const SignUpPage = () => {
     
     function ButtonsignUp(e:any){
 
-        console.log(e.target,'here is e target')
-
         
         let id:number = e.target.id
 
@@ -29,7 +27,6 @@ const SignUpPage = () => {
         let card2main:any = card2.current
         let card3main:any = card3.current
 
-        console.log(card1main,'card 1 check')
 
        if(id == 1){
         card1main.style.backgroundImage = `url(${img1})`;
@@ -91,24 +88,50 @@ const SignUpPage = () => {
         if(radiocheck == 1){
             radio2main.checked = true;
             radio2main.click()
-            console.log('it works')
+           
         }
 
         if(radiocheck == 2){
             radio3main.checked = true;
             radio3main.click()
-            console.log('it works')
+           
         }
 
         if(radiocheck == 3){
             radio1main.checked = true;
             radio1main.click()
-            console.log('it works')
+           
         }
 
 
-        console.log('here is pre',previousnumber)
     }
+
+    let prevousloop:number = 2
+
+    
+      setInterval(()=>{
+        
+            if(prevousloop>0){
+    
+                setTimeout((i:number)=>{
+                    console.log('this is i', prevousloop)
+        
+                    if(prevousloop == 2){
+                        prevousloop = 2
+                    }
+        
+        
+                    arrowSwitch(radio1.current)
+                    return
+                },5000)
+        
+            }
+          
+      },2000)
+        
+    
+
+    
 
 
 
