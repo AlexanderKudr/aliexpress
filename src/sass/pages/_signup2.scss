@@ -64,7 +64,142 @@
 }
 
 
+.buttons-and-errordiv-signup{
+    width: 100%;
+    height: 28%;
+    position: absolute;
+    bottom: -2rem;
+}
 
+.error-signup{
+    width: 100%;
+    max-height: 15%;
+    background-color: aquamarine;
+    position: relative;
+    text-align: center;
+}
+
+.signup,.google-signup{
+    width: 95%;
+    height: 17%;
+    text-align: center;
+    font-family: inherit;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.google-signup{
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+
+.signup{
+    background-image: linear-gradient(
+  90deg,
+  hsl(3deg 78% 59%) 0%,
+  hsl(311deg 46% 49%) 28%,
+  hsl(223deg 100% 50%) 100%
+);
+border-radius: 5px;
+border: 0;
+color: white;
+letter-spacing: 1px;
+}
+
+.already{
+    margin-top: 0.5rem;
+    width: 97%;
+    text-align: center;
+}
+
+
+#Google-icon-Signup{
+    width: 6%;
+    height: 6%;
+    position: relative;
+    display: flex;
+    left: 15%;
+    
+}
+
+@media (max-width:590px) {
+    #Google-icon-Signup{
+        width: 6%;
+        height: 6%;
+        position: relative;
+        display: flex;
+        left: 10%;
+        
+    }
+}
+
+@media (max-width:503px) {
+    #Google-icon-Signup{
+        width: 6%;
+        height: 6%;
+        position: relative;
+        display: flex;
+        left: 5%;
+        
+    }
+}
+
+
+
+
+@media (max-height: 736px) {
+    #span{
+        top: -3rem;
+    }
+    .buttons-and-errordiv-signup{
+        height: 20%;
+    }
+    .signup,.google-signup{
+        margin-top: 0.2rem;
+        height: 20%;
+        margin-bottom: 0.2rem;
+    }
+    .already{
+        margin-top: -0.1rem;
+    }
+}
+
+
+@media (max-height: 636px) {
+    #span{
+        top: -1.9rem;
+    }
+    .container-signup-left{
+        top: -0.5rem;
+    }
+    .buttons-and-errordiv-signup{
+        height: 21%;
+        bottom: -4rem;
+    }
+    .signup,.google-signup{
+        margin-top: 0.2rem;
+        height: 21.5%;
+        margin-bottom: 0.2rem;
+    }
+    .already{
+        margin-top: -0.1rem;
+    }
+    
+
+}
+
+@media (max-width:490px) {
+    #border-picture{
+        display: none;
+    }
+    .signup-container{
+        width: 100%;
+    }
+}
 
 
 

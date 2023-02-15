@@ -4,6 +4,7 @@ import DividerY from "./DividerY";
 import Search from "./Search";
 import Account from "./Account";
 import Cart from "./Cart";
+import Google from "./Google";
 
 export const Icons = {
   Logo,
@@ -11,5 +12,6 @@ export const Icons = {
   DividerY,
   Search,
   Account,
-  Cart
+  Cart,
+  Google
 };
