@@ -1,12 +1,13 @@
-import { Icons } from "./icons";
+import Box from "./Box";
+import { Search } from "./icons";
 
 export default function TextInput() {
   return (
-    <div className="TextInput-nav" role={"input"}>
+    <Box className="TextInput-nav" role={"input"}>
       <label>
         <input type="text" placeholder="search product" />
-        <Icons.Search />
+        <Search />
       </label>
-    </div> 
+    </Box>
   );
 }

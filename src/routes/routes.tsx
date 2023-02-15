@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../pages/Root";
 import Error from "../pages/Error";
-import Profile from "../pages/Profile";
+import UserRoot from "../pages/User/Dashboard/UserRoot";
+
 
 export const router = createBrowserRouter([
   {
@@ -28,12 +29,7 @@ export const router = createBrowserRouter([
     element: <Root />, //todo: add login from pages
   },
   {
-    path: "/dashboard",
-    element: <Root />, //todo: add dashboard from pages
-  },
-  {
-    path: "/profile",
-    element: <Profile />,
+    path: "/user/dashboard",
+    element: <UserRoot />,
   },
 ]);
-

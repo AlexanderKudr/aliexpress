@@ -10,29 +10,27 @@ nav {
   .nav-section {
     @include flex(flex, center, center);
 
-    & > div {
-      @include flex(flex, center, center);
+    & > h2 {
       margin: 0 10px;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      font-size: $fs-sm;
+      color: $clr-grey-300;
+      transition: all 0.2s;
 
-      & > h2 {
-        font-size: $fs-sm;
-        color: $clr-grey-300;
-        transition: all 0.2s;
-      }
-
-      &:hover > h2 {
+      &:hover {
         color: $clr-dgrey-600;
-      }
-
-      .nav-section-svg {
-        fill: $clr-grey-300;
-        transition: all 0.2s;
       }
 
       &:hover .nav-section-svg {
         fill: $clr-dgrey-600;
       }
+    }
+
+    .nav-section-svg {
+      fill: $clr-grey-300;
+      transition: all 0.2s;
     }
   }
 }

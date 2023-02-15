@@ -4,12 +4,8 @@ import DividerY from "./DividerY";
 import Search from "./Search";
 import Account from "./Account";
 import Cart from "./Cart";
+import Dashboard from "./Dashboard";
+import Settings from "./Settings";
+import User from "./User";
 
-export const Icons = {
-  Logo,
-  Chevron,
-  DividerY,
-  Search,
-  Account,
-  Cart
-};
+export { Logo, Chevron, DividerY, Search, Account, Cart, Dashboard, Settings, User };

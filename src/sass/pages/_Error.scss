@@ -3,15 +3,18 @@
 .error-page {
   @include flex(flex, center, center);
   flex-direction: column;
+
   & > div {
     @include flex(flex, center, center);
     flex-direction: column;
     margin-top: 15px;
+
     & > h2 {
       color: $clr-dgrey-600;
       font-weight: $fw-bold;
       font-size: $fs-2;
     }
+
     & > p {
       width: 300px;
       padding: 5px 0;

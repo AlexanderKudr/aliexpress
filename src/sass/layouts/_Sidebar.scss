@@ -1,0 +1,35 @@
+@use "../abstracts/" as *;
+
+.Sidebar {
+  padding-top: 25px;
+  height: 100vh;
+  width: 300px;
+  background-color: $clr-dblack-900;
+  .logo-dashboard {
+    @include flex(flex, center, flex-start);
+    padding-left: 25px;
+  }
+  .navlinks {
+    @include flex(flex, center, center);
+    padding-top: 25px;
+    flex-direction: column;
+    color: $clr-purple-100;
+
+    & > div {
+      @include flex(flex, center, flex-start);
+      padding-left: 20px;
+      width: 90%;
+      border-radius: 5px;
+      height: 45px;
+      margin-bottom: 15px;
+      background-color: $clr-purple-100;
+      color: black;
+      display: flex;
+
+      & > h2 {
+        margin-left: 10px;
+        font-size: $fs-sm;
+      }
+    }
+  }
+}

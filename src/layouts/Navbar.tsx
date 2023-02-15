@@ -1,37 +1,29 @@
-import { Icons } from "../components/icons";
-import TextInput from "../components/TextInput";
-import Section from "../components/Section";
-import Logo from "../components/Logo";
+import { Chevron, DividerY, Account, Cart } from "../components/icons";
+import { TextInput, Section, Header, BrandLogo } from "../components";
 
 export default function Navbar() {
   const leftSection = (
     <Section className="nav-section">
-      <Logo />
-      <div>
-        <h2>Category</h2>
-        <Icons.Chevron />
-      </div>
-      <Icons.DividerY />
-      <div>
-        <h2>Contact us</h2>
-      </div>
-      <Icons.DividerY />
-      <div>
-        <h2>About us</h2>
-      </div>
+      <BrandLogo className="logo" />
+      <Header variant={"h2"}>
+        Category
+        <Chevron />
+      </Header>
+      <DividerY />
+      <Header variant={"h2"}>Contact us</Header>
+      <DividerY />
+      <Header variant={"h2"}>About us</Header>
     </Section>
   );
   const rightSection = (
     <Section className="nav-section">
       <TextInput />
-      <div>
-        <Icons.Account />
-        <h2>Account</h2>
-      </div>
-      <div>
-        <Icons.Cart />
-        <h2>Cart</h2>
-      </div>
+      <Header variant={"h2"}>
+        <Account /> Account
+      </Header>
+      <Header variant={"h2"}>
+        <Cart /> Cart
+      </Header>
     </Section>
   );
   return (
