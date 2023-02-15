@@ -7,6 +7,9 @@ import img3 from '../assets/images/signup-pic-1-3.jpg'
 import img4 from '../assets/images/signup-pic-2-1.jpg'
 import img5 from '../assets/images/signup-pic-2-2.jpg'
 import img6 from '../assets/images/signup-pic-2-3.jpg'
+import img7 from '../assets/images/car1.jpg'
+import img8 from '../assets/images/car2.jpg'
+import img9 from '../assets/images/car3.jpg'
 
 const SignUpPage = () => {
 //-----------------------------
@@ -45,7 +48,9 @@ const SignUpPage = () => {
        }
 
        if(id == 3){
-        console.log(`it works case 3 ${card1main}`)
+        card1main.style.backgroundImage = `url(${img7})`;
+        card2main.style.backgroundImage = `url(${img8})`;
+        card3main.style.backgroundImage = `url(${img9})`;
        }else{
 
        }
@@ -98,7 +103,7 @@ const SignUpPage = () => {
         </div>
         {/* --------------------------------- */}
         <div className="signup-container">
-            <div className="container-signup-left">
+            <div className="container-signup-left t">
                 <div>
                 <Icons.Logo/>
                 <h6 id="h62">Sign Up</h6>

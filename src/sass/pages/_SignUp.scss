@@ -92,6 +92,7 @@
 .card:nth-child(2){
     justify-self: flex-end !important;
     transform: rotate(-5deg);
+    background-image: url(/src/assets/images/signup-pic-1-2.jpg);
     
 }
 
@@ -104,6 +105,7 @@
     top: 15%;
     right: 1.4rem;
     transform: rotate(15deg);
+    background-image: url(/src/assets/images/signup-pic-2-3.jpg);
 }
 
 @media (max-width:433px) {
