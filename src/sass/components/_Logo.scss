@@ -1,0 +1,12 @@
+@use "../abstracts/" as *;
+.logo {
+  @include flex(flex, center, center);
+  &-text {
+    margin-left: 10px;
+    letter-spacing: 1.2px;
+    background: -webkit-linear-gradient(170deg, $clr-red-300, $clr-blue-200);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

@@ -1,6 +1,6 @@
-type Box = {
-  className?: string;
+type UtilityComponent = {
   children?: React.ReactNode;
+  className?: string;
 };
 type Button = {
   className: string;
@@ -12,8 +12,8 @@ type Image = {
   width: number;
   height: number;
 };
-type Section = {
-  children?: React.ReactNode;
-  className?: string;
-};
-export type { Box, Button, Image, Section };
+type Box = UtilityComponent;
+type Section = UtilityComponent;
+type Aside = UtilityComponent;
+
+export type { Box, Button, Image, Section, Aside };

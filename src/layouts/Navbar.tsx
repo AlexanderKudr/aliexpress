@@ -1,14 +1,12 @@
 import { Icons } from "../components/icons";
 import TextInput from "../components/TextInput";
 import Section from "../components/Section";
+import Logo from "../components/Logo";
 
 export default function Navbar() {
   const leftSection = (
     <Section className="nav-section">
-      <div>
-        <Icons.Logo />
-        <h1>AlexShop</h1>
-      </div>
+      <Logo />
       <div>
         <h2>Category</h2>
         <Icons.Chevron />
