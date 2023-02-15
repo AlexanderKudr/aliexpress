@@ -59,6 +59,57 @@ const SignUpPage = () => {
     }
 
 
+    let radio1 = useRef()
+    let radio2 = useRef()
+    let radio3 = useRef()
+
+
+    let previousnumber:number = 0
+
+    function arrowSwitch(e:any){
+        let card1main:any = card1.current
+        let card2main:any = card2.current
+        let card3main:any = card3.current
+
+        let radio1main = radio1.current
+        let radio2main = radio2.current
+        let radio3main = radio3.current
+
+
+
+        let currentnumber:number = previousnumber + 1
+        let radiocheck = currentnumber
+
+        if(previousnumber < 3){
+            previousnumber = currentnumber
+        }else{
+            radio2main.checked = true;
+            radio2main.click()
+            previousnumber = 0
+        }
+
+        if(radiocheck == 1){
+            radio2main.checked = true;
+            radio2main.click()
+            console.log('it works')
+        }
+
+        if(radiocheck == 2){
+            radio3main.checked = true;
+            radio3main.click()
+            console.log('it works')
+        }
+
+        if(radiocheck == 3){
+            radio1main.checked = true;
+            radio1main.click()
+            console.log('it works')
+        }
+
+
+        console.log('here is pre',previousnumber)
+    }
+
 
 
 
@@ -80,24 +131,24 @@ const SignUpPage = () => {
             every weekend</p>
             <div className="carosell-containner">
                 {/* ------------------------ */}
-                <button className="arrows-signup"></button>
+                <button className="arrows-signup" onClick={(e)=>{arrowSwitch(e)}} id="decrease"></button>
                        
                 <label className="control control-radio">
-                        <input type="radio" id="1" onClick={(e)=>{ButtonsignUp(e)}} className="img-butt-signup" name="imges-signup" />
+                        <input type="radio" id="1" ref={radio1} onClick={(e)=>{ButtonsignUp(e)}} className="img-butt-signup" name="imges-signup" />
                     <div className="control_indicator"></div>
                 </label> 
 
                 <label className="control control-radio">
-                        <input type="radio" id="2" onClick={(e)=>{ButtonsignUp(e)}} className="img-butt-signup" name="imges-signup" />
+                        <input type="radio" id="2" ref={radio2} onClick={(e)=>{ButtonsignUp(e)}} className="img-butt-signup" name="imges-signup" />
                     <div className="control_indicator"></div>
                 </label> 
 
                 <label className="control control-radio">
-                        <input type="radio" id="3" onClick={(e)=>{ButtonsignUp(e)}} className="img-butt-signup" name="imges-signup" />
+                        <input type="radio" id="3" ref={radio3} onClick={(e)=>{ButtonsignUp(e)}} className="img-butt-signup" name="imges-signup" />
                     <div className="control_indicator"></div>
                 </label> 
 
-            <button className="arrows-signup"></button>
+            <button className="arrows-signup" onClick={(e)=>{arrowSwitch(e)}} id="inecrease"></button>
 
             </div>
         </div>
