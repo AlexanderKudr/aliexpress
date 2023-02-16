@@ -60,7 +60,7 @@ export default function Userbar() {
                   marginBottom: "10px",
                 }}
               >
-                <span style={{ marginRight: "5px" }}>
+                <span style={{ marginRight: "5px", marginTop: "-1px" }}>
                   <Help />
                 </span>
                 <Header variant={"h3"}>Help Center</Header>
