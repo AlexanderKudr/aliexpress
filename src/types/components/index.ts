@@ -1,11 +1,7 @@
-type UtilityComponent = {
-  children?: React.ReactNode;
-  className?: string;
-};
 type BrandLogo = { className?: string };
 type Button = {
   className: string;
-  text?: string;
+  children: React.ReactNode;
 };
 type Image = {
   src: string;
@@ -16,10 +12,17 @@ type Image = {
 type HeadingProps = React.HTMLAttributes<HTMLHeadingElement> & {
   variant: React.ElementType;
 };
+type UtilityComponent = {
+  children: React.ReactNode;
+  className?: string;
+};
 
+type Aside = UtilityComponent;
 type Box = UtilityComponent & React.HTMLAttributes<HTMLDivElement>;
 type Section = UtilityComponent;
-type Aside = UtilityComponent;
-type UserBadge = UtilityComponent;
 
-export type { Box, Button, Image, Section, Aside, HeadingProps, BrandLogo, UserBadge };
+type Tabs = {
+  [key: number]: JSX.Element;
+};
+
+export type { Box, Button, Image, Section, Aside, HeadingProps, BrandLogo, Tabs };

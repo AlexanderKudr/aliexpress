@@ -6,6 +6,5 @@ import Header from "./Header";
 import Image from "./Image";
 import Section from "./Section";
 import TextInput from "./TextInput";
-import UserBadge from "./UserBadge";
 
-export { Aside, Box, BrandLogo, Button, Header, Image, Section, TextInput, UserBadge };
+export { Aside, Box, BrandLogo, Button, Header, Image, Section, TextInput };

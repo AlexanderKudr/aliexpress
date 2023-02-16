@@ -4,24 +4,18 @@ import Sidebar from "../../../layouts/Sidebar";
 import Dashboard from "./tabs/Dashboard";
 import Profile from "./tabs/Profile";
 import Settings from "./tabs/Settings";
+import { Tabs as props } from "../../../types/components";
 
-export default function UserRoot() {
+export default function Root() {
+  
   const [tabNum, setTabNum] = useState(0);
-
-  const tabs = () => {
-    if (tabNum === 1) {
-      return <Settings />;
-    } else if (tabNum === 2) {
-      return <Profile />;
-    } else {
-      return <Dashboard />;
-    }
-  };
+  const tabs: props = { 0: <Dashboard />, 1: <Settings />, 2: <Profile /> };
+  const tabsHandler = (tabNum = 0) => tabs[tabNum];
 
   return (
-    <Box className="dashboard">
+    <Box className="root-dashboard">
       <Sidebar setTabNum={setTabNum} />
-      {tabs()}
+      {tabsHandler(tabNum)}
     </Box>
   );
 }

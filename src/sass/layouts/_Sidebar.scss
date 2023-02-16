@@ -1,15 +1,17 @@
 @use "../abstracts/" as *;
 
-.Sidebar {
+.sidebar {
   padding-top: 25px;
   height: 100vh;
   width: 300px;
   background-color: $clr-dblack-900;
-  .logo-dashboard {
+
+  &-logo{
     @include flex(flex, center, flex-start);
     padding-left: 25px;
   }
-  .navlinks {
+  
+  &-navlinks {
     @include flex(flex, center, center);
     padding-top: 25px;
     flex-direction: column;
@@ -25,6 +27,7 @@
       background-color: $clr-purple-100;
       color: black;
       display: flex;
+      cursor: pointer;
 
       & > h2 {
         margin-left: 10px;

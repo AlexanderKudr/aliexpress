@@ -1,9 +1,9 @@
 import { Button as props } from "../types/components";
 
-export default function Button({ className, text }: props) {
+export default function Button({ className, children, ...props }: props) {
   return (
-    <button type="button" className={className}>
-      {text}
+    <button {...props} type="button" className={className}>
+      {children}
     </button>
   );
 }
