@@ -9,7 +9,7 @@
   .badge {
     @include flex(flex, center, space-between);
     padding: 0 10px;
-    margin-right: 10px;
+    margin-right: 20px;
     width: 170px;
     height: 35px;
     box-shadow: 0px 1px 5px 0 $clr-dgrey-500;

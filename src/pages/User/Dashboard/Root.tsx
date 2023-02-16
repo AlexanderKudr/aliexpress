@@ -14,7 +14,7 @@ export default function Root() {
 
   return (
     <Box className="root-dashboard">
-      <Sidebar setTabNum={setTabNum} />
+      <Sidebar tabNum={tabNum} setTabNum={setTabNum} />
       {tabsHandler(tabNum)}
     </Box>
   );

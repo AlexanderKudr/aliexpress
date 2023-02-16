@@ -6,32 +6,41 @@
   width: 300px;
   background-color: $clr-dblack-900;
 
-  &-logo{
+  &-logo {
     @include flex(flex, center, flex-start);
     padding-left: 25px;
   }
-  
-  &-navlinks {
+
+  &-links-flex {
     @include flex(flex, center, center);
     padding-top: 25px;
     flex-direction: column;
     color: $clr-purple-100;
 
-    & > div {
+    .links {
       @include flex(flex, center, flex-start);
       padding-left: 20px;
       width: 90%;
       border-radius: 5px;
       height: 45px;
       margin-bottom: 15px;
-      background-color: $clr-purple-100;
-      color: black;
+      color: $clr-white;
       display: flex;
       cursor: pointer;
+      &-active {
+        @extend .links;
+        background-color: $clr-purple-100;
+      }
 
-      & > h2 {
-        margin-left: 10px;
-        font-size: $fs-sm;
+    }
+    .sidebar-header {
+      margin-left: 10px;
+      font-size: $fs-sm;
+      letter-spacing: 0.105em;
+      font-weight: $fw-semi-bold;
+      &-active {
+        @extend .sidebar-header;
+        color: $clr-dblack-900;
       }
     }
   }

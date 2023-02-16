@@ -66,7 +66,7 @@ export default function Userbar() {
                 <Header variant={"h3"}>Help Center</Header>
               </li>
               <li style={{ display: "flex", alignItems: "center" }}>
-                <span style={{ marginRight: "5px" }}>
+                <span style={{ marginRight: "5px", marginLeft: "1px" }}>
                   <Logout />
                 </span>
                 <Header variant={"h3"}>Logout</Header>
