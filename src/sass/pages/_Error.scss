@@ -1,11 +1,11 @@
 @use "../abstracts/" as *;
 
 .error-page {
-  @include flex(flex, center, center);
+  @include flex(center, center);
   flex-direction: column;
 
   & > div {
-    @include flex(flex, center, center);
+    @include flex(center, center);
     flex-direction: column;
     margin-top: 15px;
 

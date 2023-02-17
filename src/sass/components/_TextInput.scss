@@ -7,7 +7,7 @@
     width: 25vw;
 
     & > label {
-      @include flex(flex, center, space-between);
+      @include flex(center, space-between);
       border: 1px solid $clr-grey-200;
       border-radius: 30px;
       padding: 8px 10px;

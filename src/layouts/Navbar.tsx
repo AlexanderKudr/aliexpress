@@ -1,6 +1,6 @@
 import { Chevron, DividerY, Account, Cart } from "../components/icons";
 import { TextInput, Section, Header, BrandLogo } from "../components";
-
+//todo merge with userbar
 export default function Navbar() {
   const leftSection = (
     <Section className="nav-section">

@@ -1,8 +1,4 @@
 type BrandLogo = { className?: string };
-type Button = {
-  className: string;
-  children: React.ReactNode;
-};
 type Image = {
   src: string;
   alt: string;
@@ -12,17 +8,19 @@ type Image = {
 type HeadingProps = React.HTMLAttributes<HTMLHeadingElement> & {
   variant: React.ElementType;
 };
-type UtilityComponent = {
+type UtilityComponent = React.HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode;
   className?: string;
 };
 
-type Aside = UtilityComponent;
+type Button = UtilityComponent &
+  React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 type Box = UtilityComponent & React.HTMLAttributes<HTMLDivElement>;
+type Aside = UtilityComponent;
 type Section = UtilityComponent;
 
 type Tabs = {
   [key: number]: JSX.Element;
 };
-
-export type { Box, Button, Image, Section, Aside, HeadingProps, BrandLogo, Tabs };
+type Dropdown = UtilityComponent;
+export type { Box, Button, Image, Section, Aside, HeadingProps, BrandLogo, Tabs, Dropdown };

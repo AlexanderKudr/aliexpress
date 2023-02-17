@@ -1,14 +1,14 @@
 @use "../abstracts/" as *;
 
 nav {
-  @include flex(flex, center, space-around);
+  @include flex(center, space-around);
   height: 70px;
   box-shadow: 0px 1px 5px 0 $clr-dgrey-500;
   width: 100%;
   margin-bottom: 30px;
 
   .nav-section {
-    @include flex(flex, center, center);
+    @include flex(center, center);
 
     & > h2 {
       margin: 0 10px;

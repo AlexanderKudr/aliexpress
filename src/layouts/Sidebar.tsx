@@ -1,16 +1,16 @@
 import { Aside, Box, BrandLogo, Header } from "../components";
+import { activeClass } from "../services/functions/reuseClasses";
 import { Sidebar as props } from "../types/layouts";
 import { links } from "../utils/layouts/links";
-
+// todo refactor into a reusable component
 export default function Sidebar({ tabNum, setTabNum }: props) {
-
-  const navlinks = links.map(({ logo, header, id }) => {
-    const activeClass = (className: string) => (tabNum === id ? `${className}-active` : className);
-    console.log("logo", logo)
+  const navlinks = links(tabNum).map(({ logo, header, id }) => {
+    const isTabEqualId = tabNum === id;
+    
     return (
-      <Box key={id} className={activeClass("links")} onClick={() => setTabNum(id)}>
+      <Box key={id} className={activeClass(isTabEqualId, "links")} onClick={() => setTabNum(id)}>
         {logo}
-        <Header className={activeClass("sidebar-header")} variant={"h2"}>
+        <Header className={activeClass(isTabEqualId, "header")} variant={"h2"}>
           {header}
         </Header>
       </Box>
@@ -19,8 +19,8 @@ export default function Sidebar({ tabNum, setTabNum }: props) {
 
   return (
     <Aside className="sidebar">
-      <BrandLogo className="sidebar-logo" />
-      <Box className="sidebar-links-flex">{navlinks}</Box>
+      <BrandLogo className="logo" />
+      <Box className="links-flex">{navlinks}</Box>
     </Aside>
   );
 }

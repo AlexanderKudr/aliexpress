@@ -6,19 +6,19 @@
   width: 300px;
   background-color: $clr-dblack-900;
 
-  &-logo {
-    @include flex(flex, center, flex-start);
+  .logo {
+    @include flex(center, flex-start);
     padding-left: 25px;
   }
 
-  &-links-flex {
-    @include flex(flex, center, center);
+  .links-flex {
+    @include flex(center, center);
     padding-top: 25px;
     flex-direction: column;
     color: $clr-purple-100;
 
     .links {
-      @include flex(flex, center, flex-start);
+      @include flex(center, flex-start);
       padding-left: 20px;
       width: 90%;
       border-radius: 5px;
@@ -27,19 +27,28 @@
       color: $clr-white;
       display: flex;
       cursor: pointer;
+      transition: all 0.2s ease;
       &-active {
         @extend .links;
         background-color: $clr-purple-100;
       }
 
+      &-svg {
+        fill: white;
+        transition: all 0.2s ease;
+        &-active {
+          fill: rgb(0, 0, 0);
+        }
+      }
     }
-    .sidebar-header {
+
+    .header {
       margin-left: 10px;
       font-size: $fs-sm;
       letter-spacing: 0.105em;
       font-weight: $fw-semi-bold;
       &-active {
-        @extend .sidebar-header;
+        @extend .header;
         color: $clr-dblack-900;
       }
     }

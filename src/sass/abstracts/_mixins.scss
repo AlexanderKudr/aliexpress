@@ -1,6 +1,22 @@
-@mixin flex($display, $align, $justify) {
-  display: $display;
+@mixin flex($align, $justify) {
+  display: flex;
   align-items: $align;
   justify-content: $justify;
 }
 
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+@mixin animation($name, $duration, $delay) {
+  -webkit-animation: $name $duration ease-in-out normal;
+  animation: $name $duration ease-in-out normal;
+  -webkit-animation-delay: $delay;
+  animation-delay: $delay;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}

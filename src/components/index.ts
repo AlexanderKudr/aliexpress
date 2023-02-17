@@ -5,6 +5,7 @@ import Button from "./Button";
 import Header from "./Header";
 import Image from "./Image";
 import Section from "./Section";
-import TextInput from "./TextInput";
+import TextInput from "./forms/TextInput";
+import Dropdown from "./Dropdown";
 
-export { Aside, Box, BrandLogo, Button, Header, Image, Section, TextInput };
+export { Aside, Box, BrandLogo, Button, Header, Image, Section, TextInput, Dropdown };
