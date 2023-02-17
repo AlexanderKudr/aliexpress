@@ -1,0 +1,12 @@
+@use "../../../../abstracts/" as *;
+
+.profile {
+  height: 100vh;
+  width: 100vw;
+  .hero {
+    height: inherit;
+    background-color: rgb(255, 227, 227);
+    @include flex(center, center);
+    flex-direction: column;
+  }
+}
