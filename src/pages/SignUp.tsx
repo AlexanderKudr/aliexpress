@@ -235,6 +235,7 @@ const SignUpPage = () => {
               id=""
               className="input-sign"
             />
+            
             <h6 className="headers-sign">Email</h6>
             <input
               type="text"
