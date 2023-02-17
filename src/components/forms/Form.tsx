@@ -1,3 +1,14 @@
-export default function Form({ children }: { children: React.ReactNode }) {
-  return <form>{children} </form>;
+export default function Form({
+  children,
+  className,
+  ...props
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <form {...props} className={className}>
+      {children}{" "}
+    </form>
+  );
 }

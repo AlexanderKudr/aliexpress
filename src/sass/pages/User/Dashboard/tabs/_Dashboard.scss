@@ -6,15 +6,14 @@
   margin: auto;
 
   .hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex(center, center);
     flex-direction: column;
+    height: calc(100vh - 50px);
 
     .image-container {
       position: relative;
-      width: 100px;
-      height: 100px;
+      margin-bottom: 20px;
+
       & > img {
         border-radius: 50%;
       }
@@ -23,6 +22,39 @@
         bottom: 0;
         right: 0;
         cursor: pointer;
+      }
+    }
+    .form {
+      div {
+        margin-bottom: 10px;
+      }
+      input {
+        gap: 10px;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        &:focus {
+          outline: none;
+        }
+      }
+
+      %flex-column {
+        display: flex;
+        flex-direction: column;
+      }
+      .names,
+      .country-state,
+      .zip-city {
+        @include flex(center, space-between);
+        div {
+          @extend %flex-column;
+        }
+      }
+      .email,
+      .address,
+      .contact-number,
+      .password {
+        @extend %flex-column;
+        width: 100%;
       }
     }
   }
