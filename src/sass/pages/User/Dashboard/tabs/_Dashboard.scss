@@ -26,12 +26,12 @@
     }
     .form {
       div {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
       }
       input {
         gap: 10px;
         border: none;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 2px solid $clr-grey-200;
         &:focus {
           outline: none;
         }
@@ -45,6 +45,8 @@
       .country-state,
       .zip-city {
         @include flex(center, space-between);
+        -moz-column-gap: 50px;
+             column-gap: 50px;
         div {
           @extend %flex-column;
         }
@@ -55,7 +57,17 @@
       .password {
         @extend %flex-column;
         width: 100%;
+         label {
+          transform: translateY(25px);
+        }
+        &:focus label {
+          transform: translateY(0px);
+        }
+      }
+      .buttons {
+        margin-top: 20px;
       }
     }
+
   }
 }

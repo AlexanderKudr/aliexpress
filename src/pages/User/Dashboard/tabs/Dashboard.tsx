@@ -60,9 +60,9 @@ export default function Dashboard() {
             <label htmlFor="Password">Password</label>
             <input id="Password" type="text" />
           </Box>
-          <Box>
-            <Button>Save</Button>
-            <Button>Cancel</Button>
+          <Box className="buttons">
+            <Button className="Button-save">Save</Button>
+            <Button className="Button-cancel">Cancel</Button>
           </Box>
         </Form>
       </Box>
