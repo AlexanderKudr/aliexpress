@@ -10,6 +10,10 @@ import img6 from "../assets/images/signup-pic-2-3.jpg";
 import img7 from "../assets/images/car1.jpg";
 import img8 from "../assets/images/car2.jpg";
 import img9 from "../assets/images/car3.jpg";
+import { Icon } from 'react-icons-kit'
+import {eye} from 'react-icons-kit/feather/eye'
+import {eyeOff} from 'react-icons-kit/feather/eyeOff'
+
 
 const SignUpPage = () => {
   const card1: any = useRef();
@@ -23,6 +27,24 @@ const SignUpPage = () => {
   const [radio1n2, updateradio1] = useState<any>(0);
   const [radio2n2, updateradio2] = useState<any>(0);
   const [radio3n2, updateradio3] = useState<any>(0);
+  let timerRef = useRef<any>(null)
+  let [visiblity,updatevisiblity] = useState('password')
+  let [icon,updateicon] = useState(eyeOff)
+
+
+function password(){
+  if(visiblity === 'password'){
+    updatevisiblity('text')
+  }else{
+    updatevisiblity('password')
+  }
+  if(icon === eye){
+    updateicon(eyeOff)
+  }else{
+    updateicon(eye)
+  }
+}
+
 
   useEffect(() => {
     if (radio1.current) {
@@ -87,8 +109,10 @@ const SignUpPage = () => {
             radio1main.checked = true;
 
             if (type == "increase") {
+              timerRef.current = null
               return (loop = 2);
             } else {
+              timerRef.current = null
               return (loop = 3);
             }
           }, 1000);
@@ -102,9 +126,11 @@ const SignUpPage = () => {
             radio2main.checked = true;
 
             if (type === "increase") {
+              timerRef.current = null
               return (loop = 3);
             }
             if (type === "decrease") {
+              timerRef.current = null
               return (loop = 1);
             }
           }, 1000);
@@ -118,9 +144,11 @@ const SignUpPage = () => {
             radio3main.checked = true;
 
             if (type === "increase") {
+              timerRef.current = null
               return (loop = 1);
             }
             if (type === "decrease") {
+              timerRef.current = null
               return (loop = 2);
             }
           }, 1000);
@@ -129,11 +157,18 @@ const SignUpPage = () => {
     }
   }
 
-  setInterval(() => {
-    console.log("i ran");
+ 
 
-    arrowSwitch("increase");
-  }, 5000);
+setInterval(()=>{
+  timerRef.current = null
+  console.log('use effect render',timerRef)
+  if(timerRef.current === null){
+    timerRef.current = setTimeout(()=>{
+      arrowSwitch("increase");
+    },6000)
+  }
+},2000)
+
 
   const Right = () => {
     return (
@@ -245,13 +280,16 @@ const SignUpPage = () => {
               className="input-sign"
             />
             <h6 className="headers-sign">Password</h6>
+            <span id="password-span">
             <input
-              type="text"
+              type={visiblity}
               name=""
               placeholder="Enter your password"
               id=""
-              className="input-sign"
+              className="input-sign password"
             />
+            <span id="eye"><Icon icon={icon} size={40} onClick={()=>{password()}}/></span>
+            </span>
             <button className="signup-multicolor">Sign up</button>
             <button className="signup-Google">
               <span id="signupgoogle-1">
