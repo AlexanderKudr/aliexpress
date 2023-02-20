@@ -6,7 +6,7 @@ type Image = {
   height: number;
 };
 type HeadingProps = React.HTMLAttributes<HTMLHeadingElement> & {
-  variant: React.ElementType;
+  variant: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 };
 type UtilityComponent = React.HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode;

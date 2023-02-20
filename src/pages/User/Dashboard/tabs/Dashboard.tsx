@@ -3,68 +3,86 @@ import Userbar from "../../../../layouts/Userbar";
 import UserImage from "../../../../assets/images/UserImage.jpg";
 import { Edit } from "../../../../components/icons";
 import Form from "../../../../components/forms/Form";
+import CustomInput, { FormValues } from "../../../../components/forms/CustomInput";
+import { useFormik } from "formik";
+import { formData, validateFormData } from "../../../../utils/formik";
 
 export default function Dashboard() {
+  const { handleSubmit, errors, values, touched, handleChange } = useFormik<FormValues>({
+    initialValues: formData,
+    validate: validateFormData,
+    onSubmit: (values) => {
+      console.log(values, "values");
+      console.log(errors, "errors");
+    },
+  });
+  type Input = {
+    id: string;
+    name: string;
+    label: string;
+    val: string;
+  };
+  const inputHandler = ({ id, name, label, val }: Input) => {
+    return (
+      <CustomInput
+        className={"input-custom"}
+        id={id}
+        name={name}
+        label={label}
+        placeholder=" "
+        onChange={handleChange}
+        value={val}
+      />
+    );
+  };
+  const user = (
+    <Box className={"image-container"}>
+      <Image src={UserImage} width={100} height={100} alt={"user image"} />
+      <Edit className={"edit-icon"} />
+    </Box>
+  );
+  const form = (
+    <Form className="form" onSubmit={handleSubmit}>
+      <CustomInput
+        className={"input-custom"}
+        id={"firstname"}
+        name={"Firstname"}
+        label={"Firstname"}
+        placeholder=" "
+        onChange={handleChange}
+        value={values.Firstname}
+      />
+      {errors.Firstname && touched.Firstname && <div className="error">{errors.Firstname}</div>}
+
+      {/* <Box>
+      <CustomInput className={"input-custom"} id={"lastname"} required label={"Lastname"} />
+      </Box>
+      <CustomInput className={"input-custom"} id={"email"} required label={"Email"} />
+      <CustomInput className={"input-custom"} id={"number"} required label={"Contact number"} />
+      <CustomInput className={"input-custom"} id={"address"} required label={"Address"} />
+      <Box>
+        <CustomInput className={"input-custom"} id={"country"} required label={"Country"} />
+        <CustomInput className={"input-custom"} id={"state"} required label={"State"} />
+      </Box>
+      <Box>
+        <CustomInput className={"input-custom"} id={"zip-code"} required label={"Zip code"} />
+        <CustomInput className={"input-custom"} id={"city"} required label={"City"} />
+      </Box>
+      <CustomInput className={"input-custom"} id={"password"} required label={"Password"} /> */}
+
+      <Box className="submit">
+        <Button className="Button-save">Save</Button>
+        <Button className="Button-cancel">Cancel</Button>
+      </Box>
+      <button type="submit">Submit</button>
+    </Form>
+  );
   return (
     <Box className="dashboard">
       <Userbar />
       <Box className="hero">
-        <Box className={"image-container"}>
-          <Image src={UserImage} width={100} height={100} alt={"user image"} />
-          <Edit className={"edit-icon"} />
-        </Box>
-        <Form className="form">
-          <Box className="names">
-            <Box>
-              <label htmlFor="firstName">Firstname</label>
-              <input id="Firstname" type="text" />
-            </Box>
-            <Box>
-              <label htmlFor="Lastname">Lastname</label>
-              <input id="Lastname" type="text" />
-            </Box>
-          </Box>
-          <Box className="email">
-            <label htmlFor="Email">Email</label>
-            <input id="Email" type="text" />
-          </Box>
-          <Box className="contact-number">
-            <label htmlFor="Contact number">Contact number</label>
-            <input id="Contact number" type="text" />
-          </Box>
-          <Box className="address">
-            <label htmlFor="Address">Address</label>
-            <input id="Address" type="text" />
-          </Box>
-          <Box className="country-state">
-            <Box>
-              <label htmlFor="Country">Country</label>
-              <input id="Country" type="text" />
-            </Box>
-            <Box>
-              <label htmlFor="State">State</label>
-              <input id="State" type="text" />
-            </Box>
-          </Box>
-          <Box className="zip-city">
-            <Box>
-              <label htmlFor="Zip code">Zip code</label>
-              <input id="Zip code" type="text" />
-            </Box>
-            <Box>
-              <label htmlFor="City">City</label>
-              <input id="City" type="text" />
-            </Box>
-          </Box>
-          <Box className="password">
-            <label htmlFor="Password">Password</label>
-            <input id="Password" type="text" />
-          </Box>
-          <Box className="buttons">
-            <Button className="Button-save">Save</Button>
-            <Button className="Button-cancel">Cancel</Button>
-          </Box>
-        </Form>
+        {user}
+        {form}
       </Box>
     </Box>
   );

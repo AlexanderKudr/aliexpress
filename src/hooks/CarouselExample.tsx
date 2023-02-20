@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const items = [
   { id: 1, title: "Slide 1", content: "This is slide 1" },
@@ -13,15 +13,16 @@ export const Carousel = () => {
     setCurrentSlide(currentSlide === 0 ? items.length - 1 : currentSlide - 1);
   };
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide(currentSlide === items.length - 1 ? 0 : currentSlide + 1);
-  };
+  }, [currentSlide]);
+
   useEffect(() => {
     const interval = setInterval(() => nextSlide(), 5000);
     return () => clearInterval(interval);
-  }, [currentSlide]);
+  }, [nextSlide]);
 
-  const { id, title, content } = items[currentSlide];
+  const { title, content } = items[currentSlide];
   const buttonStyle = {
     //if you need these styles, move them into sass file
     backgroundColor: "white",

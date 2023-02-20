@@ -24,50 +24,20 @@
         cursor: pointer;
       }
     }
+    %flex-column {
+      display: flex;
+      flex-direction: column;
+    }
     .form {
-      div {
-        margin-bottom: 5px;
-      }
-      input {
-        gap: 10px;
-        border: none;
-        border-bottom: 2px solid $clr-grey-200;
-        &:focus {
-          outline: none;
-        }
-      }
-
-      %flex-column {
+      @extend %flex-column;
+      div:not(.submit) {
+        margin-bottom: 10px;
         display: flex;
-        flex-direction: column;
+        column-gap: 20px;
       }
-      .names,
-      .country-state,
-      .zip-city {
-        @include flex(center, space-between);
-        -moz-column-gap: 50px;
-             column-gap: 50px;
-        div {
-          @extend %flex-column;
-        }
-      }
-      .email,
-      .address,
-      .contact-number,
-      .password {
-        @extend %flex-column;
-        width: 100%;
-         label {
-          transform: translateY(25px);
-        }
-        &:focus label {
-          transform: translateY(0px);
-        }
-      }
-      .buttons {
-        margin-top: 20px;
+      .submit {
+        margin-top: 10px;
       }
     }
-
   }
 }
