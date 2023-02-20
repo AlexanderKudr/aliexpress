@@ -3,26 +3,23 @@ import Userbar from "../../../../layouts/Userbar";
 import UserImage from "../../../../assets/images/UserImage.jpg";
 import { Edit } from "../../../../components/icons";
 import Form from "../../../../components/forms/Form";
-import CustomInput, { FormValues } from "../../../../components/forms/CustomInput";
+import CustomInput from "../../../../components/forms/CustomInput";
 import { useFormik } from "formik";
-import { formData, validateFormData } from "../../../../utils/formik";
+import { formData, FormValues, validateFormData } from "../../../../utils/formik";
 
 export default function Dashboard() {
   const { handleSubmit, errors, values, touched, handleChange } = useFormik<FormValues>({
     initialValues: formData,
     validate: validateFormData,
+    validateOnChange: false,
     onSubmit: (values) => {
       console.log(values, "values");
       console.log(errors, "errors");
     },
   });
-  type Input = {
-    id: string;
-    name: string;
-    label: string;
-    val: string;
-  };
-  const inputHandler = ({ id, name, label, val }: Input) => {
+
+  type Input = (id: string, name: string, label: string, val: string) => void;
+  const input: Input = (id, name, label, val) => {
     return (
       <CustomInput
         className={"input-custom"}
@@ -43,37 +40,46 @@ export default function Dashboard() {
   );
   const form = (
     <Form className="form" onSubmit={handleSubmit}>
-      <CustomInput
-        className={"input-custom"}
-        id={"firstname"}
-        name={"Firstname"}
-        label={"Firstname"}
-        placeholder=" "
-        onChange={handleChange}
-        value={values.Firstname}
-      />
-      {errors.Firstname && touched.Firstname && <div className="error">{errors.Firstname}</div>}
-
-      {/* <Box>
-      <CustomInput className={"input-custom"} id={"lastname"} required label={"Lastname"} />
-      </Box>
-      <CustomInput className={"input-custom"} id={"email"} required label={"Email"} />
-      <CustomInput className={"input-custom"} id={"number"} required label={"Contact number"} />
-      <CustomInput className={"input-custom"} id={"address"} required label={"Address"} />
-      <Box>
-        <CustomInput className={"input-custom"} id={"country"} required label={"Country"} />
-        <CustomInput className={"input-custom"} id={"state"} required label={"State"} />
-      </Box>
-      <Box>
-        <CustomInput className={"input-custom"} id={"zip-code"} required label={"Zip code"} />
-        <CustomInput className={"input-custom"} id={"city"} required label={"City"} />
-      </Box>
-      <CustomInput className={"input-custom"} id={"password"} required label={"Password"} /> */}
-
-      <Box className="submit">
-        <Button className="Button-save">Save</Button>
-        <Button className="Button-cancel">Cancel</Button>
-      </Box>
+      <>
+        <Box>
+          <>
+            {input("firstname", "Firstname", "Firstname", values.Firstname)}
+            {errors.Firstname && touched.Firstname && (
+              <div className="error">{errors.Firstname}</div>
+            )}
+            {input("lastname", "Lastname", "Lastname", values.Lastname)}
+            {errors.Lastname && touched.Lastname && <div className="error">{errors.Lastname}</div>}
+          </>
+        </Box>
+        {input("email", "Email", "Email", values.Email)}
+        {errors.Email && touched.Email && <div className="error">{errors.Email}</div>}
+        {input("number", "Number", "Number", values.Number)}
+        {errors.Number && touched.Number && <div className="error">{errors.Number}</div>}
+        {input("address", "Address", "Address", values.Address)}
+        {errors.Address && touched.Address && <div className="error">{errors.Address}</div>}
+        <Box>
+          <>
+            {input("country", "Country", "Country", values.Country)}
+            {errors.Country && touched.Country && <div className="error">{errors.Country}</div>}
+            {input("state", "State", "State", values.State)}
+            {errors.State && touched.State && <div className="error">{errors.State}</div>}
+          </>
+        </Box>
+        <Box>
+          <>
+            {input("zipcode", "Zip", "Zip", values.Zip)}
+            {errors.Zip && touched.Zip && <div className="error">{errors.Zip}</div>}
+            {input("city", "City", "City", values.City)}
+            {errors.City && touched.City && <div className="error">{errors.City}</div>}
+          </>
+        </Box>
+        {input("password", "Password", "Password", values.Password)}
+        {errors.Password && touched.Password && <div className="error">{errors.Password}</div>}
+        <Box className="submit">
+          <Button className="Button-save">Save</Button>
+          <Button className="Button-cancel">Cancel</Button>
+        </Box>
+      </>
       <button type="submit">Submit</button>
     </Form>
   );

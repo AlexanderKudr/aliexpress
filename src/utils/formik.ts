@@ -1,14 +1,24 @@
-import { FormValues } from "../components/forms/CustomInput";
-
+export type FormValues = {
+  Firstname: string;
+  Lastname: string;
+  Email: string;
+  Number: string;
+  Address: string;
+  Country: string;
+  State: string;
+  Zip: string;
+  City: string;
+  Password: string;
+};
 const formData = {
   Firstname: "",
   Lastname: "",
   Email: "",
-  "Contact number": "",
+  Number: "",
   Address: "",
   Country: "",
   State: "",
-  "Zip code": "",
+  Zip: "",
   City: "",
   Password: "",
 };
@@ -29,10 +39,10 @@ const validateFormData = (values: FormValues) => {
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.Email)) {
     errors.Email = "Invalid email address";
   }
-  if (!values["Contact number"]) {
-    errors["Contact number"] = "Required";
-  } else if (values["Contact number"].length < 10) {
-    errors["Contact number"] = "Must be at least 10 characters";
+  if (!values.Number) {
+    errors.Number = "Required";
+  } else if (values.Number.length < 10) {
+    errors.Number = "Must be at least 10 characters";
   }
   if (!values.Password) {
     errors.Password = "Required";
