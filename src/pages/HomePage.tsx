@@ -5,7 +5,9 @@ import img13 from '../assets/images/img13-homepage1.jpg'
 import img14 from '../assets/images/backgroundimg-homepage1-14.jpg'
 
 
-const Homepage = () => {
+
+const Top = ()=>{
+
     const [button1color,updatdebutton1color] = useState<string>('#FFBF85')
     const [button2color,updatdebutton2color] = useState<string>('#D1D1D1')
     const [button3color,updatdebutton3color] = useState<string>('#D1D1D1')
@@ -92,48 +94,14 @@ const Homepage = () => {
                 updateloop1(4)
                }
         }
-        let number = loop1 + 10
+        const number = loop1 + 10
         console.log(loop1,'loop1',number,'number')
         buttons(number)
         
        
     }
 
-  
-    
 
-    // setInterval(()=>{
-    //     updateintervalloop1(1)
-    //     if(intervalloop1 !== 1 || 2 || 3){
-    //             if(loop1 === 4){
-    //                 console.log('it is 4')
-    //                 updatetempvar('decrement')
-    //             }
-    //             if(loop1 === 1){
-    //                 console.log('it is 4')
-    //                 updatetempvar('increment')
-    //             }
-    //             console.log('it is going this way',tempvar)
-    //                 arrows1(tempvar)
-            
-                
-      
-    //     }
-    // },5000)
-
-    // useEffect(()=>{
-    //     setTimeout(()=>{
-    //         if(loop1 === 4){
-    //             console.log('it is 4')
-    //             updatetempvar('decrement')
-    //         }
-    //         if(loop1 === 1){
-    //             console.log('it is 4')
-    //             updatetempvar('increment')
-    //         }
-    //         console.log('hi')
-    //     },2000)
-    // },[backgroundimg1])
 
     const [tempvar,updatetempvar] = useState('increment')
 
@@ -153,8 +121,6 @@ const Homepage = () => {
      useEffect(()=>Interval(),[intervalloop1])
 
 
-
-const Top = ()=>{
     return(
         <>
         <div style={{backgroundImage: `url(${backgroundimg1})`}} className="big-container-one">
@@ -178,6 +144,15 @@ const Top = ()=>{
         </>
     )
 }
+
+
+
+
+
+
+
+
+const Homepage = () => {
 
 
     return ( 
