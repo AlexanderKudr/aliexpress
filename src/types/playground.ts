@@ -8,8 +8,8 @@ export const welcomePeople = <T>(x: T | string) => {
   }
 };
 
-let something = "Hello"; //figured out, let showing the type of string
+// let something = "Hello"; //figured out, let showing the type of string
 const somethingElse = "Hello"; //but const acutally showing the type value
-console.log(something); //hover to check the type
+// console.log(something); //hover to check the type
 console.log(somethingElse); //hover to check the type
 

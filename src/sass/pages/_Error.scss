@@ -3,7 +3,9 @@
 .error-page {
   @include flex(center, center);
   flex-direction: column;
-
+  .error-image {
+    margin-top: 30px;
+  }
   & > div {
     @include flex(center, center);
     flex-direction: column;

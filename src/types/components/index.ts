@@ -4,6 +4,7 @@ type Image = {
   alt: string;
   width: number;
   height: number;
+  className?: string;
 };
 type HeadingProps = React.HTMLAttributes<HTMLHeadingElement> & {
   variant: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
