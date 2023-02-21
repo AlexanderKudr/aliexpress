@@ -14,8 +14,8 @@ const Top = ()=>{
     const [button4color,updatdebutton4color] = useState<string>('#D1D1D1')
     // -------------------
     const [loop1,updateloop1] = useState<number>(1)
-    let [backgroundimg1,updatebackgroundimg1]= useState<any>(img11)
-    let [intervalloop1,updateintervalloop1] = useState<number>(0)
+    const [backgroundimg1,updatebackgroundimg1]= useState<unknown>(img11)
+    const [intervalloop1,updateintervalloop1] = useState<number>(0)
     
 
     function updateobject(ids:Array<number>){
@@ -41,18 +41,18 @@ const Top = ()=>{
         
     }
 
-    function buttons(e:any){
+    function buttons(e:number){
     const target:number = e
     const numberarray:(number)[] = [11,12,13,14]
 
-    let notidnumbers = numberarray.filter((item)=>{
+    const notidnumbers = numberarray.filter((item)=>{
         return item !== target
     })
 
-    let idnumbers = numberarray.filter((item)=>{
+    const idnumbers = numberarray.filter((item)=>{
         return item === target
     })
-    let tempnumber = Math.abs(target - 10)
+    const tempnumber = Math.abs(target - 10)
     console.log('this is temp number',tempnumber)
 
     updateobject(notidnumbers)
@@ -78,6 +78,7 @@ const Top = ()=>{
 
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     function arrows1(crement:string){
         if(crement === 'increment' && loop1 < 4){
             const number1 = loop1 +1
@@ -105,20 +106,25 @@ const Top = ()=>{
 
     const [tempvar,updatetempvar] = useState('increment')
 
-    function Interval(){
-        setTimeout(()=>{
-           updateintervalloop1(intervalloop1+1)
-           if(loop1 == 4){
-            updatetempvar('decrement')
-           }
-           if(loop1 == 1){
-            updatetempvar('increment')
-           }
-           arrows1(tempvar)
-           console.log('loop',intervalloop1)
-         },2000)
-    }
-     useEffect(()=>Interval(),[intervalloop1])
+   
+     useEffect(()=>{
+        function Interval(){
+            setTimeout(()=>{
+               updateintervalloop1(intervalloop1+1)
+               if(loop1 == 3){
+                updatetempvar('decrement')
+               }
+               if(loop1 == 2){
+                updatetempvar('increment')
+               }
+               arrows1(tempvar)
+               console.log('loop',intervalloop1)
+             },2000)
+        }
+
+        Interval()
+    
+    },[arrows1, intervalloop1, loop1, tempvar])
 
 
     return(
