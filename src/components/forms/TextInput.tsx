@@ -3,7 +3,7 @@ import { Search } from "../icons";
 //todo it's not resuable lol, need to fix it
 export default function TextInput() {
   return (
-    <Box className="TextInput-nav" role={"input"}>
+    <Box className="TextInput-nav" role={"search"}>
       <label>
         <input type="text" placeholder="search product" />
         <Search />

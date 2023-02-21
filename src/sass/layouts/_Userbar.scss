@@ -60,6 +60,7 @@
       &-active {
         @extend %ul-extend;
         height: 80px;
+        z-index: 1;
       }
     }
 

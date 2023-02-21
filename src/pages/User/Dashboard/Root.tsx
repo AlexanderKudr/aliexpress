@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Box } from "../../../components";
 import Sidebar from "../../../layouts/Sidebar";
 import Dashboard from "./tabs/Dashboard";
@@ -7,6 +7,10 @@ import Settings from "./tabs/Settings";
 import { Tabs as props } from "../../../types/components";
 
 export default function Root() {
+  useEffect(() => {
+    document.title = "Dashboard";
+  }, []);
+  
   const [tabNum, setTabNum] = useState(0);
   const tabs: props = { 0: <Dashboard />, 1: <Settings />, 2: <Profile /> };
   const tabsHandler = (tabNum = 0) => tabs[tabNum];
