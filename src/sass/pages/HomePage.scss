@@ -1,7 +1,7 @@
 
 .big2{
     position: relative !important;
-    width: 100% !important;
+    width: 100vw !important;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -26,13 +26,14 @@
 }
 .slide{
     height: 400px;
-    width: 100% !important;
+    width: 100% ;
     
     
     .slideimg{
-        width: 100%;
+        width: 100vw;
         height: 400px;
         position: relative;
+        object-fit: cover;
     }
     
 }
@@ -97,7 +98,7 @@
         width: 90%;
         height: 15rem;
         position: relative;
-        margin-top: 2rem;
+        margin-top: 4rem;
         justify-self: center;
         
         .pop{
@@ -112,32 +113,79 @@
             height: 90%;
             justify-content: space-between;
             align-content: start;
+            .flex-con-home-2:nth-child(1){
+                background: linear-gradient(152.08deg, #5F8EE0 -6.39%, #CCF9FF 91.9%);
+            }
+            .flex-con-home-2:nth-child(2){
+                background: linear-gradient(141.62deg, #E98EA1 -3.35%, #A78EE8 126.61%);
+                .apple{
+                    position: absolute;
+                    top: 0.3rem;
+                    left: 0.3rem;
+                    width: 1.6rem;
+                    height: 1.6rem;
+                }
+                .laptop{
+                    position: absolute;
+                    bottom: -1.7rem;
+                    right: -2.3rem;
+                    width: 30rem;
+                    height: 10rem;
+                }
+            }
+            .flex-con-home-2:nth-child(3){
+                background: linear-gradient(85.06deg, #F9EE8B -37.8%, #FFBF85 133.51%);
+            }
+            .flex-con-home-2:nth-child(4){
+                background: linear-gradient(141.62deg, #8EE4E9 -3.35%, #DFDDE4 126.61%);
+            }
             .flex-con-home-2{
                 min-width: 9rem;
-                min-height: 50%;
+                min-height: 9rem;
                 width: 12.5rem;
                 height: 65%;
-                background-color: aqua;
+                border: 1px solid black;
                 position: relative;
                 justify-self: center;
                 align-self: center;
                 border-radius: 10px;
                 margin: min(0.5rem);
-                @media (min-width:869px) {
-                    .flex-con-home-2{
-                        overflow-x: scroll;
-                    }
+                .goto{
+                    position: absolute;
+                    top: 0.3rem;
+                    right: 0.3rem;
+                    width: 1.5rem;
+                   height: 1.5rem; 
+                   display: grid;
+                   justify-content: center;
+                   align-content: center;
+                   border: 0;
+                   border-radius: 50%;
                 }
             }
         }
+        @media (max-width:853px) {
+            .flex2{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: repeat(2,1fr);
+            }
+        }
+        @media (max-width:525px) {
+            .flex2{
+                display: grid;
+                grid-template-columns: repeat(1,1fr);
+                grid-template-rows: repeat(4,1fr);
+            }
+        }
     }
-    
-       
+          
     .pop-container-1{
         width: 90%;
         height: 15rem;
         position: relative;
         justify-self: center;
+        margin-top: 3rem;
         .pop-1{
             width: 100%;
             font-family: inherit;
@@ -169,5 +217,11 @@
             }
         }
     }
+    @media (min-width:853px) {
+        .flex2-1{
+            display: grid;
+            grid-template-columns: 2;
+            grid-template-rows: 2;
+        }
+    }
 }
-

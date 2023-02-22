@@ -2,12 +2,15 @@ import img11 from '../assets/images/homepage-before-one.png'
 import img12 from '../assets/images/img12-homepage1.jpg'
 import img13 from '../assets/images/img13-homepage1.jpg'
 import img14 from '../assets/images/backgroundimg-homepage1-14.jpg'
+import arrow from '../assets/images/arrow-home.png'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import apple from '../assets/images/outline-apple.png'
+import laptop from '../assets/images/laptop-home-1.png'
 
 const Newtop = ()=>{
     return(
@@ -71,10 +74,32 @@ const Popularcatagory = ()=>{
         <div className="pop-container">
             <h1 className='pop'>Popular Categories</h1>
             <div className="flex2">
-                <div className="flex-con-home-2"></div>
-                <div className="flex-con-home-2"></div>
-                <div className="flex-con-home-2"></div>
-                <div className="flex-con-home-2"></div>
+                <div className="flex-con-home-2">
+                    <button className="goto">
+                        <img src={arrow} alt="" />
+                    </button>
+                </div>
+
+                <div className="flex-con-home-2">
+                    <button className="goto">
+                        <img src={arrow} alt="" />
+                    </button>
+                    <img src={apple} alt="" className="apple" />
+                    <img src={laptop} alt="" className='laptop' />
+                </div>
+
+                <div className="flex-con-home-2">
+                    <button className="goto">
+                        <img src={arrow} alt="" />
+                    </button>
+                </div>
+
+                <div className="flex-con-home-2">
+                    <button className="goto">
+                        <img src={arrow} alt="" />
+                    </button>
+                </div>
+
             </div>
         </div>
         </>
@@ -102,10 +127,11 @@ const Homepage = () => {
 
     return ( 
         <>
+        <div className="big-one">
       <Newtop/>
       <div className="container-11">
       <Popularcatagory/>
-      <ProductsHome/>
+      </div>
       </div>
         </>
      );
