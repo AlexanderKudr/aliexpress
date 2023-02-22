@@ -1,4 +1,4 @@
-export const welcomePeople = <T>(x: T | string) => {
+export const welcomePeople = <T> (x: T | string) => {
   // if (Array.isArray(x)) {
   if (x instanceof Array) {
     console.log("Hello, " + x.join(" and "));

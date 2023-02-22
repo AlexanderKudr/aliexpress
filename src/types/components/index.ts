@@ -24,4 +24,7 @@ type Tabs = {
   [key: number]: JSX.Element;
 };
 type Dropdown = UtilityComponent;
+
+
+
 export type { Box, Button, Image, Section, Aside, HeadingProps, BrandLogo, Tabs, Dropdown };

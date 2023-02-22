@@ -7,10 +7,18 @@ export default function ErrorPage() {
   return (
     <Box className={"error-page"}>
       <Navbar />
-      <Image className="error-image" src={errorImage} alt={"error image"} width={400} height={400} />
+      <Image
+        className="error-image"
+        src={errorImage}
+        alt={"error image"}
+        width={400}
+        height={400}
+      />
       <Box>
         <Header variant={"h2"}>Whoops! Lost in Space?</Header>
-        <p>The page you’re looking for isn’t found :( We suggest you to back to home</p>
+        <p>
+          The page you&#39;re looking for isn&#39;t found &#128532; We suggest you to back to home
+        </p>
         <Link to={"/"}>
           <Button className="Button-back-to-home">Back to Home</Button>
         </Link>

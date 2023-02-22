@@ -3,35 +3,21 @@ import Userbar from "../../../../layouts/Userbar";
 import UserImage from "../../../../assets/images/UserImage.jpg";
 import { Edit } from "../../../../components/icons";
 import Form from "../../../../components/forms/Form";
-import CustomInput from "../../../../components/forms/CustomInput";
-import { useFormik } from "formik";
-import { formData, FormValues, validateFormData } from "../../../../utils/formik";
+import { Controller, useForm } from "react-hook-form";
+import { FormValues, inputComponent, rules } from "../../../../utils/formDashboard";
 
 export default function Dashboard() {
-  const { handleSubmit, errors, values, touched, handleChange } = useFormik<FormValues>({
-    initialValues: formData,
-    validate: validateFormData,
-    validateOnChange: false,
-    onSubmit: (values) => {
-      console.log(values, "values");
-      console.log(errors, "errors");
-    },
-  });
-
-  type Input = (id: string, name: string, label: string, val: string) => void;
-  const input: Input = (id, name, label, val) => {
-    return (
-      <CustomInput
-        className={"input-custom"}
-        id={id}
-        name={name}
-        label={label}
-        placeholder=" "
-        onChange={handleChange}
-        value={val}
-      />
-    );
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm<FormValues>({ reValidateMode: "onSubmit" });
+  const onSubmit = (data: FormValues) => {
+    console.log(data);
+    console.log("runned");
   };
+
+  const { Firstname, Lastname, Email, Number, Password } = rules(errors);
   const user = (
     <Box className={"image-container"}>
       <Image src={UserImage} width={100} height={100} alt={"user image"} />
@@ -39,48 +25,97 @@ export default function Dashboard() {
     </Box>
   );
   const form = (
-    <Form className="form" onSubmit={handleSubmit}>
-      <>
-        <Box>
-          <>
-            {input("firstname", "Firstname", "Firstname", values.Firstname)}
-            {errors.Firstname && touched.Firstname && (
-              <div className="error">{errors.Firstname}</div>
-            )}
-            {input("lastname", "Lastname", "Lastname", values.Lastname)}
-            {errors.Lastname && touched.Lastname && <div className="error">{errors.Lastname}</div>}
-          </>
+    <Form className="form" onSubmit={handleSubmit(onSubmit)}>
+      <Box className="group">
+        <Box style={{ display: "flex", flexDirection: "column" }}>
+          <Controller
+            name="Firstname"
+            control={control}
+            rules={Firstname}
+            defaultValue=""
+            render={({ field }) => inputComponent(field, "Firstname")}
+          />
+          {Firstname.error.required}
+          {Firstname.error.minLength}
         </Box>
-        {input("email", "Email", "Email", values.Email)}
-        {errors.Email && touched.Email && <div className="error">{errors.Email}</div>}
-        {input("number", "Number", "Number", values.Number)}
-        {errors.Number && touched.Number && <div className="error">{errors.Number}</div>}
-        {input("address", "Address", "Address", values.Address)}
-        {errors.Address && touched.Address && <div className="error">{errors.Address}</div>}
-        <Box>
-          <>
-            {input("country", "Country", "Country", values.Country)}
-            {errors.Country && touched.Country && <div className="error">{errors.Country}</div>}
-            {input("state", "State", "State", values.State)}
-            {errors.State && touched.State && <div className="error">{errors.State}</div>}
-          </>
+        <Box style={{ display: "flex", flexDirection: "column" }}>
+          <Controller
+            name="Lastname"
+            control={control}
+            rules={Lastname}
+            defaultValue=""
+            render={({ field }) => inputComponent(field, "Lastname")}
+          />
+          {Lastname.error.required}
+          {Lastname.error.minLength}
         </Box>
-        <Box>
-          <>
-            {input("zipcode", "Zip", "Zip", values.Zip)}
-            {errors.Zip && touched.Zip && <div className="error">{errors.Zip}</div>}
-            {input("city", "City", "City", values.City)}
-            {errors.City && touched.City && <div className="error">{errors.City}</div>}
-          </>
-        </Box>
-        {input("password", "Password", "Password", values.Password)}
-        {errors.Password && touched.Password && <div className="error">{errors.Password}</div>}
-        <Box className="submit">
-          <Button className="Button-save">Save</Button>
-          <Button className="Button-cancel">Cancel</Button>
-        </Box>
-      </>
-      <button type="submit">Submit</button>
+      </Box>
+      <Controller
+        name="Email"
+        control={control}
+        rules={Email}
+        defaultValue=""
+        render={({ field }) => inputComponent(field, "Email")}
+      />
+      {Email.error.required}
+      {Email.error.pattern}
+      <Controller
+        name="Number"
+        control={control}
+        rules={Number}
+        defaultValue=""
+        render={({ field }) => inputComponent(field, "Number")}
+      />
+      {Number.error.required}
+      {Number.error.pattern}
+      {Number.error.minLength}
+      <Controller
+        name="Address"
+        control={control}
+        defaultValue=""
+        render={({ field }) => inputComponent(field, "Address")}
+      />
+      <Box className="group">
+        <Controller
+          name="Country"
+          control={control}
+          defaultValue=""
+          render={({ field }) => inputComponent(field, "Country")}
+        />
+        <Controller
+          name="State"
+          control={control}
+          defaultValue=""
+          render={({ field }) => inputComponent(field, "State")}
+        />
+      </Box>
+      <Box className="group">
+        <Controller
+          name="Zip"
+          control={control}
+          defaultValue=""
+          render={({ field }) => inputComponent(field, "Zip")}
+        />
+        <Controller
+          name="City"
+          control={control}
+          defaultValue=""
+          render={({ field }) => inputComponent(field, "City")}
+        />
+      </Box>
+      <Controller
+        name="Password"
+        control={control}
+        rules={Password}
+        defaultValue=""
+        render={({ field }) => inputComponent(field, "Password")}
+      />
+      {Password.error.required}
+      {Password.error.minLength}
+      <Box className="submit">
+        <Button className="Button-save">Save</Button>
+        <Button className="Button-cancel">Cancel</Button>
+      </Box>
     </Form>
   );
   return (

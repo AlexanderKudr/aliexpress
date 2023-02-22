@@ -30,8 +30,12 @@
     }
     .form {
       @extend %flex-column;
-      div:not(.submit) {
-        margin-bottom: 10px;
+      .group {
+        display: flex;
+        column-gap: 20px;
+      }
+      .input-custom {
+        margin-bottom: 8px;
         display: flex;
         column-gap: 20px;
       }

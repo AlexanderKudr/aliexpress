@@ -11,6 +11,10 @@ export const router = createBrowserRouter([
     element: <><Root /><Homepage/></>,
     errorElement: <Error />,
     children: [
+      // {
+      //   index: true,
+      //   element: <Homepage />,
+      // },
       {
         path: "/category/:id",
         element: <Root />, //todo: add category from pages
