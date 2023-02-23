@@ -11,6 +11,8 @@ import User from "./User";
 import Help from "./Help";
 import Logout from "./Logout";
 import Edit from "./Edit";
+import Notvisible from "./Notvisible";
+import Visible from "./Visible";
 
 export {
   Logo,
@@ -26,4 +28,6 @@ export {
   Logout,
   Google,
   Edit,
+  Notvisible,
+  Visible,
 };

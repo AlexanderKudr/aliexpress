@@ -1,3 +1,5 @@
+@use "./breakpoints" as *;
+
 @mixin flex($align, $justify) {
   display: flex;
   align-items: $align;
@@ -19,4 +21,28 @@
   animation-delay: $delay;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+}
+
+@mixin breakpoint($point) {
+  @if $point == xs {
+    @media only screen and (max-width: $xsBreakpoint) {
+      @content;
+    }
+  } @else if $point == sm {
+    @media only screen and (max-width: $smBreakpoint) {
+      @content;
+    }
+  } @else if $point == md {
+    @media only screen and (max-width: $mdBreakpoint) {
+      @content;
+    }
+  } @else if $point == lg {
+    @media only screen and (max-width: $lgBreakpoint) {
+      @content;
+    }
+  } @else if $point == xl {
+    @media only screen and (max-width: $xlBreakpoint) {
+      @content;
+    }
+  }
 }

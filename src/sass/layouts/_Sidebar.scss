@@ -3,12 +3,19 @@
 .sidebar {
   padding-top: 25px;
   height: 100vh;
-  width: 300px;
   background-color: $clr-dblack-900;
 
   .logo {
     @include flex(center, flex-start);
     padding-left: 25px;
+    box-shadow: 0 0 10px inset rgba(0, 0, 0, 0.1);
+    @include breakpoint(sm) {
+      padding-left: 0px;
+      @include flex(center, center);
+      h1 {
+        display: none;
+      }
+    }
   }
 
   .links-flex {
@@ -22,8 +29,8 @@
       padding-left: 20px;
       width: 90%;
       border-radius: 10px;
-      height: 45px;
-      margin-bottom: 15px;
+      height: 50px;
+      margin: 10px 60px;
       color: $clr-white;
       display: flex;
       cursor: pointer;
@@ -32,24 +39,32 @@
         @extend .links;
         background-color: $clr-purple-100;
       }
-
+      @include breakpoint(sm) {
+        width: 75%;
+        height: 43px;
+        margin: 10px 20px;
+        padding-left: 0;
+        @include flex(center, center);
+      }
+      .header {
+        margin-left: 10px;
+        font-size: $fs-sm;
+        letter-spacing: 0.105em;
+        font-weight: $fw-semi-bold;
+        &-active {
+          @extend .header;
+          color: $clr-dblack-900;
+        }
+        @include breakpoint(sm) {
+          display: none;
+        }
+      }
       &-svg {
         fill: white;
         transition: all 0.2s ease;
         &-active {
           fill: rgb(0, 0, 0);
         }
-      }
-    }
-
-    .header {
-      margin-left: 10px;
-      font-size: $fs-sm;
-      letter-spacing: 0.105em;
-      font-weight: $fw-semi-bold;
-      &-active {
-        @extend .header;
-        color: $clr-dblack-900;
       }
     }
   }

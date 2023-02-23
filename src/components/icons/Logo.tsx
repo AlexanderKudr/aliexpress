@@ -1,7 +1,8 @@
 export default function Logo() {
   return (
-    <svg width="39" height="37" viewBox="0 0 39 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg  width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
+
         d="M38.8572 19C38.8572 13.9609 37.2196 9.12815 34.3048 5.56497C31.3899 2.00178 27.4365 6.608e-07 23.3143 0C19.1921 -6.60798e-07 15.2388 2.00178 12.3239 5.56497C9.40903 9.12815 7.77148 13.9609 7.77148 19H12.6287C14.2382 19 15.4935 17.3512 16.083 15.5203C16.47 14.3183 17.0574 13.2137 17.8191 12.2824C19.2765 10.5009 21.2532 9.49999 23.3143 9.49999C25.3754 9.49999 27.3522 10.5009 28.8096 12.2824C30.267 14.064 31.0857 16.4805 31.0857 19H38.8572Z"
         fill="url(#paint0_linear_86_124)"
       />
@@ -21,6 +22,7 @@ export default function Logo() {
       />
       <defs>
         <linearGradient
+
           id="paint0_linear_86_124"
           x1="38.8572"
           y1="9.49999"
@@ -43,6 +45,8 @@ export default function Logo() {
           <stop offset="1" stopColor="#FB8E8E" />
         </linearGradient>
       </defs>
+
     </svg>
+
   );
 }

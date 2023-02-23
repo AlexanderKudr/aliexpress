@@ -18,9 +18,12 @@ const ErrorMessage = ({ children }: { children: ReactNode }) => (
   <p style={{ color: "red", fontSize: "0.7rem", marginTop: "-5px" }}>{children}</p>
 );
 const inputComponent = (
-  field: any,
-  label: string //todo: add type to field
-) => <CustomInput {...field} label={label} className={"input-custom"} placeholder=" " />;
+  field: any, //todo: add type to field
+  label: string,
+  type?: React.HTMLInputTypeAttribute | undefined
+) => (
+  <CustomInput {...field} type={type} label={label} className={"input-custom"} placeholder=" " />
+);
 
 const rules = (errors: FieldErrors<FormValues>) => {
   return {

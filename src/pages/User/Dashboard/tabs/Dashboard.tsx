@@ -1,21 +1,24 @@
-import { Image, Box, Button } from "../../../../components";
+import Form from "../../../../components/forms/Form";
 import Userbar from "../../../../layouts/Userbar";
 import UserImage from "../../../../assets/images/UserImage.jpg";
 import { Edit } from "../../../../components/icons";
-import Form from "../../../../components/forms/Form";
+import { Image, Box, Button } from "../../../../components";
+import { usePassword } from "../../../../hooks/usePassword";
 import { Controller, useForm } from "react-hook-form";
 import { FormValues, inputComponent, rules } from "../../../../utils/formDashboard";
-
+//todo, add logic for user image
+//todo, replace onsubmit with backend schema
+//todo, add logout functionality
+//todo, gonna add help center page?
 export default function Dashboard() {
+  const { hidden, icons } = usePassword();
   const {
     handleSubmit,
     control,
     formState: { errors },
   } = useForm<FormValues>({ reValidateMode: "onSubmit" });
-  const onSubmit = (data: FormValues) => {
-    console.log(data);
-    console.log("runned");
-  };
+
+  const onSubmit = (data: FormValues) => console.log(data);
 
   const { Firstname, Lastname, Email, Number, Password } = rules(errors);
   const user = (
@@ -108,13 +111,22 @@ export default function Dashboard() {
         control={control}
         rules={Password}
         defaultValue=""
-        render={({ field }) => inputComponent(field, "Password")}
+        render={({ field }) => (
+          <Box className="password">
+            {inputComponent(field, "Password", !hidden ? "password" : "text")}
+            {icons}
+          </Box>
+        )}
       />
       {Password.error.required}
       {Password.error.minLength}
       <Box className="submit">
-        <Button className="Button-save">Save</Button>
-        <Button className="Button-cancel">Cancel</Button>
+        <Button type={"submit"} className="Button-save">
+          Save
+        </Button>
+        <Button type={"reset"} className="Button-cancel">
+          Cancel
+        </Button>
       </Box>
     </Form>
   );

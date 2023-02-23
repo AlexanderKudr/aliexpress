@@ -1,13 +1,11 @@
 import { Box, Header, Image, Button, Dropdown } from "../components";
 import { Chevron } from "../components/icons";
 import userIcon from "../assets/images/userIcon.jpg";
-import { useState } from "react";
+import { memo, useState } from "react";
 import { activeClass } from "../services/functions/reuseClasses";
 import { dropdownData } from "../utils/layouts/dropdownData";
 
-//todo refactor into navbar
-export default function Userbar() {
-  
+const Userbar = memo(function Userbar() {
   const dropdownClass = `dropdown`;
   const [open, setOpen] = useState(false);
   const dropdownList = dropdownData.map(({ icon, text, id }) => (
@@ -35,4 +33,5 @@ export default function Userbar() {
       </Dropdown>
     </Box>
   );
-}
+});
+export default Userbar;

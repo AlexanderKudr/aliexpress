@@ -56,7 +56,7 @@
     &-ul {
       @extend %ul-extend;
       height: 0px;
-
+      z-index: 1;
       &-active {
         @extend %ul-extend;
         height: 80px;
