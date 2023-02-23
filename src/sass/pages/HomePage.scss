@@ -1,7 +1,8 @@
 
+
 .big2{
-    position: relative !important;
-    width: 100vw !important;
+    position: relative;
+    width: 100vw;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -15,7 +16,7 @@
         display: grid;
         top: 55%;
         .big{
-            font-size: 1.5rem !important;
+            font-size: 1.5rem;
             justify-self: center;
         }
         .par-1{
@@ -37,75 +38,26 @@
     }
     
 }
-.swiper-button-prev {
-    left: 90% !important;
-    top: 85% !important;
-    position: absolute !important;
-    margin-right: 1rem;
-    background-color: rgb(255, 255, 255);
-    width: 3rem;
-    height: 3rem;
-    padding: 1rem;
-    border-radius: 50%;
-  }
-  .swiper-button-next {
-    right: 3rem !important;
-    top: 85% !important;
-    position: absolute !important;
-    background-color: rgb(255, 255, 255);
-    width: 3rem;
-    height: 3rem;
-    padding: 1rem;
-    border-radius: 50%;
-  }
-
-  @media (max-width:1094px) {
     
-.swiper-button-prev {
-    left: 80% !important;
-    top: 85% !important;
-    position: absolute !important;
-    margin-right: 1rem;
-  }
-  .swiper-button-next {
-    right: 3rem !important;
-    top: 85% !important;
-    position: absolute !important;
-  }
-    
-  }
-
-  @media (max-width:571px) {
-    
-    .swiper-button-prev {
-        left: 63% !important;
-        top: 85% !important;
-        position: absolute !important;
-        margin-right: 1rem;
-      }
-      .swiper-button-next {
-        right: 3rem !important;
-        top: 85% !important;
-        position: absolute !important;
-      }
-        
-      }
-    
-
 .container-11{
     display: grid;
+    justify-self: center;
     .pop-container{
         width: 90%;
-        height: 15rem;
+        min-height: 15rem;
         position: relative;
         margin-top: 4rem;
         justify-self: center;
-        
         .pop{
             width: 100%;
             font-family: inherit;
             font-weight: bold;
             padding-left: 10px;
+        }
+        @media (max-width:530px) {
+            .pop{
+                text-align: center;
+            }
         }
         .flex2{
             display: flex;
@@ -115,6 +67,25 @@
             align-content: start;
             .flex-con-home-2:nth-child(1){
                 background: linear-gradient(152.08deg, #5F8EE0 -6.39%, #CCF9FF 91.9%);
+                .shoe{
+                    top: -2rem;
+                    right: -5rem;
+                    position: absolute;
+                    height: 10rem;
+                    width: 14rem;
+                }
+                .shoe-par{
+                    width: 7rem;
+                    position: relative;
+                    bottom: -2.6rem;
+                    left: 0.5rem;
+                    color: white;
+                    font-size: 0.9rem;
+                    font-weight: 100;
+                    .span-shoe{
+                        font-size: 0.7rem;
+                    }
+                }
             }
             .flex-con-home-2:nth-child(2){
                 background: linear-gradient(141.62deg, #E98EA1 -3.35%, #A78EE8 126.61%);
@@ -127,29 +98,68 @@
                 }
                 .laptop{
                     position: absolute;
-                    bottom: -1.7rem;
-                    right: -2.3rem;
-                    width: 30rem;
-                    height: 10rem;
+                    bottom: -1.0rem;
+                    right: -3.4rem;
+                    width: 13rem;
+                    height: 9rem;
+                }
+                .paragraph-lap{
+                    width: 6.5rem;
+                    position: relative;
+                    bottom: -4rem;
+                    left: 0.3rem;
+                    color: white;
+                    font-size: 0.7rem;
                 }
             }
             .flex-con-home-2:nth-child(3){
                 background: linear-gradient(85.06deg, #F9EE8B -37.8%, #FFBF85 133.51%);
+                .coffegroup{
+                    position: absolute;
+                    right: -2.5rem;
+                    bottom: -1.0rem;
+                    width: 9rem;
+                    height: 9rem;
+                }
+                .coffeepar{
+                    position: absolute;
+                    width: 8rem;
+                    font-size: 0.8rem;
+                    font-weight: 100;
+                    bottom: 2rem;
+                    left: 0.2rem;
+                }
             }
             .flex-con-home-2:nth-child(4){
                 background: linear-gradient(141.62deg, #8EE4E9 -3.35%, #DFDDE4 126.61%);
+                .carandbear{
+                    position: absolute;
+                    bottom: -0.7rem;
+                    right: -1.2rem;
+                    width: 7rem;
+                    height: 11rem;
+                }
+                .carandbearp{
+                    width: 8rem;
+                    position: relative;
+                    top: 4rem;
+                    left: 0.2rem;
+                    font-size: 0.7rem;
+                }
             }
             .flex-con-home-2{
-                min-width: 9rem;
+                min-width: 10rem;
                 min-height: 9rem;
-                width: 12.5rem;
+                width: 14rem;
                 height: 65%;
-                border: 1px solid black;
                 position: relative;
                 justify-self: center;
                 align-self: center;
                 border-radius: 10px;
-                margin: min(0.5rem);
+                margin: min(0.2rem);
+                .percent-home{
+                    font-size: 0.9rem;
+                }
                 .goto{
                     position: absolute;
                     top: 0.3rem;
@@ -161,6 +171,8 @@
                    align-content: center;
                    border: 0;
                    border-radius: 50%;
+                   cursor: pointer;
+                   z-index: 100;
                 }
             }
         }
@@ -179,49 +191,137 @@
             }
         }
     }
-          
-    .pop-container-1{
+    .container-products-home{
         width: 90%;
-        height: 15rem;
+        min-height: 20rem;
         position: relative;
+        margin-top: 4rem;
         justify-self: center;
-        margin-top: 3rem;
-        .pop-1{
+        .productshomeh1{
             width: 100%;
-            font-family: inherit;
             font-weight: bold;
-            padding-left: 0px;
         }
-        .flex2-1{
-            display: flex;
+        .productswipercontain{
             width: 100%;
+            min-height: 15rem;
             height: 90%;
-            justify-content: space-between;
-            align-content: start;
-            .flex-con-home-2-2{
-                min-width: 9rem;
-                min-height: 50%;
-                width: 12.5rem;
-                height: 65%;
-                background-color: aqua;
+            justify-self: center;
+            align-self: center;
+        }
+    
+        }
+    
+    }
+
+.product-con{
+    background-color: white;
+    width: 9rem;
+    height: 14rem;
+    margin-left: min(2.5rem);
+    position: relative;
+    top: 1.9rem;
+    border-radius: 3px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.03);
+    border: 1px solid #EEEEEE;
+    .picture-div-home{
+        width: 100%;
+        height: 8.9rem;
+        overflow: hidden;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        background-color: bisque;
+        .hearticon{
+            position: absolute;
+            z-index: 100;
+            cursor: pointer;
+            top: 0.2rem;
+            right: 0.2rem;
+        }
+        .img-con-home{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .numberheading{
+        width: 100%;
+        height: 1rem;
+        display: flex;
+        .h6products{
+            position: relative;
+            top: -0.1rem;
+            margin-left: 0.3rem;
+            margin-right: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        .money{
+            height: 0.7rem;
+            position: relative;
+            top: 0.2rem;
+        }
+    }
+
+    .paragraph-home-prod{
+        width: 100%;
+        height: 2.5rem;
+        padding: 3px;
+        font-size: 0.7rem;
+    }
+    .buttons-home{
+        width: 100%;
+        height: 1.6rem;
+        padding: 4px;
+        display: flex;
+        .button-bottom-1{
+            width: 2.5rem;
+            height: 1.2rem;
+            position: relative;
+            top: -0.06rem;
+            border-radius: 10px;
+            border: 0;
+            background-color: #F1DE30;
+            cursor: pointer;
+            display: flex;
+            .star{
                 position: relative;
-                justify-self: center;
-                align-self: center;
-                border-radius: 10px;
-                margin: min(0.5rem);
-                @media (min-width:869px) {
-                    .flex-con-home-2-2{
-                        overflow-x: scroll;
-                    }
-                }
+                top: 1px;
+                left: 0.1rem;
+            }
+            .fifty{
+                font-size: 0.8rem;
+                margin-left: 4px;
+                color: white;
             }
         }
-    }
-    @media (min-width:853px) {
-        .flex2-1{
+        .p-product-home{
+            font-size: 0.5rem;
+            padding-left: 8px;
+            margin-left: 12px;
+            border-left: 1px solid grey;
             display: grid;
-            grid-template-columns: 2;
-            grid-template-rows: 2;
+            justify-self: center;
+            align-self: center;
         }
+        .redshopping{
+           margin-left: 1.4rem;
+           cursor: pointer;
+        }
+      
     }
 }
+
+.products-con-2{
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background-color: red;
+    .swiper-wrapper{
+        padding-bottom: 80px;
+    }
+    
+    .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+        bottom: 0rem ;
+    }
+}
+
