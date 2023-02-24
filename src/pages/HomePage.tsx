@@ -167,7 +167,7 @@ const ProductsHome = ()=>{
                modules={[Navigation, Pagination, Scrollbar, A11y]}
              spaceBetween={0}
              pagination={{ clickable: true }}
-             slidesPerView={widthcustom.width < 1174 ? 3 : 5}
+             slidesPerView={widthcustom.width < 1174 ? widthcustom.width < 600 ? 2 : 3 : 5}
             >
                 <SwiperSlide>
                     <Product/>
