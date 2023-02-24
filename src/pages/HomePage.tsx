@@ -19,7 +19,8 @@ import money from '../assets/images/$4200.png'
 import hearticon from '../assets/images/hearticon.png'
 import shoppingcartred from '../assets/images/shoppingcartred.png'
 import star from '../assets/images/starticon.png'
-
+import windowsizehook from '../hooks/Windowsizehook'
+import { useState } from 'react'
 
 const Newtop = ()=>{
     return(
@@ -157,16 +158,16 @@ const Product = ()=>{
 }
 
 const ProductsHome = ()=>{
+    const widthcustom = windowsizehook()
     return(
         <>
+        <h1 className="product-heading">Popular Products</h1>
         <div className="products-con-2">
             <Swiper
                modules={[Navigation, Pagination, Scrollbar, A11y]}
              spaceBetween={0}
              pagination={{ clickable: true }}
-             slidesPerView={5}
-             onSlideChange={() => console.log('slide change')}
-             onSwiper={(swiper) => console.log(swiper)}
+             slidesPerView={widthcustom.width < 1174 ? 3 : 5}
             >
                 <SwiperSlide>
                     <Product/>
@@ -204,8 +205,6 @@ const ProductsHome = ()=>{
 }
 
 const Homepage = () => {
-
-
     return ( 
         <>
        

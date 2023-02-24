@@ -310,12 +310,16 @@
       
     }
 }
-
+.product-heading{
+    width: 90%;
+    margin-left: 2.5rem;
+    font-weight: bold;
+}
 .products-con-2{
     width: 100%;
     height: 300px;
     position: relative;
-    background-color: red;
+    margin-top: 1.5rem;
     .swiper-wrapper{
         padding-bottom: 80px;
     }
