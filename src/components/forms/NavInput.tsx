@@ -1,9 +1,9 @@
 import Box from "../Box";
 import { Search } from "../icons";
 //todo it's not resuable lol, need to fix it
-export default function TextInput() {
+export default function NavInput() {
   return (
-    <Box className="TextInput-nav" role={"search"}>
+    <Box className="NavInput-nav" role={"search"}>
       <label>
         <input type="text" placeholder="search product" />
         <Search />

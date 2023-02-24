@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { FieldErrors } from "react-hook-form";
-import { CustomInput } from "../components/forms/CustomInput";
+import { DashboardInput } from "../components/forms/DashboardInput";
 
 export type FormValues = {
   Firstname: string;
@@ -22,7 +22,7 @@ const inputComponent = (
   label: string,
   type?: React.HTMLInputTypeAttribute | undefined
 ) => (
-  <CustomInput {...field} type={type} label={label} className={"input-custom"} placeholder=" " />
+  <DashboardInput {...field} type={type} label={label} className={"input-custom"} placeholder=" " />
 );
 
 const rules = (errors: FieldErrors<FormValues>) => {

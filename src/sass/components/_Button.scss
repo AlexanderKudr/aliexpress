@@ -47,7 +47,7 @@
     all: unset;
     box-shadow: 0px 1px 5px 0px $clr-grey-200;
     background-color: $clr-white;
-    border: 1px solid $clr-purple-100;;
+    border: 1px solid $clr-purple-100;
     width: 85px;
     height: 40px;
     text-align: center;
@@ -61,6 +61,27 @@
     }
     &:hover {
       box-shadow: 0px 1px 3px 0px $clr-purple-200;
+    }
+  }
+
+  &-signup {
+    all: unset;
+    width: 380px;
+    height: 40px;
+    text-align: center;
+    color: $clr-white;
+    font-size: $fs-sm;
+    border-radius: 5px;
+    box-shadow: 0px 3px 4px 0px $clr-grey-300;
+    background: linear-gradient(-45deg, #984984, #1547ED);
+    cursor: pointer;
+    
+    &.google {
+      background: transparent;
+      color: $clr-dblack-900;
+      border: 1px solid $clr-grey-300;
+      box-shadow: 0px 1px 1px 0px $clr-grey-300;
+      @include flex(center, center);
     }
   }
 }

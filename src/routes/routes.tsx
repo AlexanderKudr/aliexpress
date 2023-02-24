@@ -2,13 +2,19 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "../pages/Root";
 import Error from "../pages/Error";
 import DashboardRoot from "../pages/User/Dashboard/Root";
-import SignUpPage from "../pages/SignUp";
+// import SignUpPage from "../pages/SignUp";
 import Homepage from "../pages/HomePage";
+import Signup from "../pages/User/Signup";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <><Root /><Homepage/></>,
+    element: (
+      <>
+        <Root />
+        <Homepage />
+      </>
+    ),
     errorElement: <Error />,
     children: [
       // {
@@ -27,12 +33,17 @@ export const router = createBrowserRouter([
   },
   {
     path: "/user/signup",
-    element: <SignUpPage />, //todo: add signup from pages
+    element: <Signup />,
+    // element: <SignUpPage />,
   },
   {
     path: "/user/signin",
-    element: <Root />, //todo: add login from pages
+    element: <div>Signin in progress</div>,
   },
+  // {
+  //   path: "/user/signin",
+  //   element: <Root />, //todo: add login from pages
+  // },
   {
     path: "/user/dashboard",
     element: <DashboardRoot />,

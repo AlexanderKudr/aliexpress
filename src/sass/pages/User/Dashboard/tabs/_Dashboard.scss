@@ -45,7 +45,7 @@
       }
       .password {
         position: relative;
-        .eye-icon {
+        &-eye-icon {
           cursor: pointer;
           position: absolute;
           right: 0;

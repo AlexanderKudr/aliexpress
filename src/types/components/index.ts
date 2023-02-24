@@ -1,3 +1,5 @@
+import { InputHTMLAttributes } from "react";
+
 type BrandLogo = { className?: string };
 type Image = {
   src: string;
@@ -25,6 +27,22 @@ type Tabs = {
 };
 type Dropdown = UtilityComponent;
 
+type InputHTML = InputHTMLAttributes<HTMLInputElement>;
+type SignInputProps = InputHTML & {
+  label: string;
+  labelFor: string;
+  className?: string;
+};
 
-
-export type { Box, Button, Image, Section, Aside, HeadingProps, BrandLogo, Tabs, Dropdown };
+export type {
+  SignInputProps,
+  Box,
+  Button,
+  Image,
+  Section,
+  Aside,
+  HeadingProps,
+  BrandLogo,
+  Tabs,
+  Dropdown,
+};

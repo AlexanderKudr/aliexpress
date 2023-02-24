@@ -1,12 +1,12 @@
 import { forwardRef } from "react";
 import { InputHTMLAttributes } from "react";
 
-type CustomInputProps = InputHTMLAttributes<HTMLInputElement> & {
+type DashboardInputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   className?: string;
 };
 type Ref = HTMLInputElement;
-export const CustomInput = forwardRef<Ref, CustomInputProps>(
+export const DashboardInput = forwardRef<Ref, DashboardInputProps>(
   ({ className, label, value, ...rest }, ref) => {
     return (
       <div className={className}>
@@ -16,7 +16,7 @@ export const CustomInput = forwardRef<Ref, CustomInputProps>(
     );
   }
 );
-CustomInput.displayName = "CustomInput";
+DashboardInput.displayName = "DashboardInput";
 // export default function CustomInput({ className, label, value, ...rest }: CustomInputProps) {
 //   return (
 //     <div className={className}>

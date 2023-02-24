@@ -1,5 +1,5 @@
 import { Chevron, DividerY, Account, Cart } from "../components/icons";
-import { TextInput, Section, Header, BrandLogo } from "../components";
+import { NavInput, Section, Header, BrandLogo } from "../components";
 //todo merge with userbar
 export default function Navbar() {
   const leftSection = (
@@ -17,7 +17,7 @@ export default function Navbar() {
   );
   const rightSection = (
     <Section className="nav-section">
-      <TextInput />
+      <NavInput />
       <Header variant={"h2"}>
         <Account /> Account
       </Header>

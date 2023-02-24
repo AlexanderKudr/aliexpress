@@ -11,7 +11,7 @@ import { FormValues, inputComponent, rules } from "../../../../utils/formDashboa
 //todo, add logout functionality
 //todo, gonna add help center page?
 export default function Dashboard() {
-  const { hidden, icons } = usePassword();
+  const { hidden, icons } = usePassword("password-eye-icon");
   const {
     handleSubmit,
     control,
@@ -21,6 +21,7 @@ export default function Dashboard() {
   const onSubmit = (data: FormValues) => console.log(data);
 
   const { Firstname, Lastname, Email, Number, Password } = rules(errors);
+  
   const user = (
     <Box className={"image-container"}>
       <Image src={UserImage} width={100} height={100} alt={"user image"} />
@@ -124,9 +125,7 @@ export default function Dashboard() {
         <Button type={"submit"} className="Button-save">
           Save
         </Button>
-        <Button type={"reset"} className="Button-cancel">
-          Cancel
-        </Button>
+        <Button className="Button-cancel">Cancel</Button>
       </Box>
     </Form>
   );
