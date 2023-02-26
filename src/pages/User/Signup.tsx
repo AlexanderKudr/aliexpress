@@ -6,7 +6,7 @@ import { SignInput } from "../../components/forms/SignInput";
 import { Google, Logo } from "../../components/icons";
 import { usePassword } from "../../hooks/usePassword";
 import { rules } from "../../utils/formDashboard";
-
+//rewriting into custom hook
 export default function Signup() {
   const { hidden, icons } = usePassword("group-eye-icon");
   type SignInInputValues = {
