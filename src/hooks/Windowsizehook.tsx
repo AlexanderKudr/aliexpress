@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
 
 function useWindowSize() {
@@ -16,5 +16,5 @@ function useWindowSize() {
   
   export default function ShowWindowDimensions() {
     const [width, height] = useWindowSize();
-    return {width}
+    return {width : width, height: height}
   }

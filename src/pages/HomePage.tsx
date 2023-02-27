@@ -20,7 +20,6 @@ import hearticon from '../assets/images/hearticon.png'
 import shoppingcartred from '../assets/images/shoppingcartred.png'
 import star from '../assets/images/starticon.png'
 import windowsizehook from '../hooks/Windowsizehook'
-import { useState } from 'react'
 
 const Newtop = ()=>{
     return(
