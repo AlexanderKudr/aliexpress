@@ -20,9 +20,10 @@ export const Carousel = () => {
   useEffect(() => {//this is the code that runs when the component is mounted and when the component is re-rendered
     const interval = setInterval(() => nextSlide(), 5000);//this is the code that runs every 5 seconds
     return () => clearInterval(interval);//this is the code that runs when the component is unmounted
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSlide]); 
 
-  const { id, title, content } = items[currentSlide]; //destructuring the items array
+  const {title, content } = items[currentSlide]; //destructuring the items array
   const buttonStyle = {
     //if you need these styles, move them into sass file
     backgroundColor: "white",

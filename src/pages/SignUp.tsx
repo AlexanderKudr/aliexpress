@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Link } from "react-router-dom";
 import { Google, Logo } from "../components/icons";
 import { useEffect, useRef, useState } from "react";
@@ -19,17 +20,16 @@ const SignUpPage = () => {
   const card1: any = useRef();
   const card2: any = useRef();
   const card3: any = useRef();
-  let radio1: any = useRef();
-  let radio2: any = useRef();
-  let radio3: any = useRef();
-  let previousnumber: number = 0;
+  const radio1: any = useRef();
+  const radio2: any = useRef();
+  const radio3: any = useRef();
   let loop = 1;
   const [radio1n2, updateradio1] = useState<any>(0);
   const [radio2n2, updateradio2] = useState<any>(0);
   const [radio3n2, updateradio3] = useState<any>(0);
-  let timerRef = useRef<any>(null)
-  let [visiblity,updatevisiblity] = useState('password')
-  let [icon,updateicon] = useState(eyeOff)
+  const timerRef = useRef<any>(null)
+  const [visiblity,updatevisiblity] = useState('password')
+  const [icon,updateicon] = useState(eyeOff)
 
 
 function password(){
@@ -59,11 +59,11 @@ function password(){
   }, []);
 
   function ButtonsignUp(e: any) {
-    let id: number = e.target.id;
+    const id: number = e.target.id;
 
-    let card1main: any = card1.current;
-    let card2main: any = card2.current;
-    let card3main: any = card3.current;
+    const card1main: any = card1.current;
+    const card2main: any = card2.current;
+    const card3main: any = card3.current;
 
     if (id == 1) {
       card1main.style.backgroundImage = `url(${img1})`;
@@ -71,6 +71,7 @@ function password(){
       card3main.style.backgroundImage = `url(${img3})`;
       return (loop = 2);
     } else {
+      console.log('error signup')
     }
 
     if (id == 2) {
@@ -79,6 +80,7 @@ function password(){
       card3main.style.backgroundImage = `url(${img6})`;
       return (loop = 3);
     } else {
+      console.log('error signup')
     }
 
     if (id == 3) {
@@ -87,17 +89,18 @@ function password(){
       card3main.style.backgroundImage = `url(${img9})`;
       return (loop = 1);
     } else {
+      console.log('error signup')
     }
   }
 
   function arrowSwitch(type: string) {
-    let card1main: any = card1.current;
-    let card2main: any = card2.current;
-    let card3main: any = card3.current;
+    const card1main: any = card1.current;
+    const card2main: any = card2.current;
+    const card3main: any = card3.current;
 
-    let radio1main = radio1n2;
-    let radio2main = radio2n2;
-    let radio3main = radio3n2;
+    const radio1main = radio1n2;
+    const radio2main = radio2n2;
+    const radio3main = radio3n2;
 
     if (radio1main && radio2main && radio3main !== 0) {
       if (loop < 4) {
@@ -184,7 +187,7 @@ setInterval(()=>{
           <span id="span2">
             <button
               className="arrows-signup2"
-              onClick={(e) => {
+              onClick={() => {
                 arrowSwitch("decrease");
               }}
               id="decrease"
