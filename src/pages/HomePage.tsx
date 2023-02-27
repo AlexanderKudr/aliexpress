@@ -164,7 +164,7 @@ const ProductsHome = ()=>{
         <div className="products-con-2">
             <Swiper
                modules={[Navigation, Pagination, Scrollbar, A11y]}
-             spaceBetween={0}
+             spaceBetween={-40}
              pagination={{ clickable: true }}
              slidesPerView={widthcustom.width < 1174 ? widthcustom.width < 600 ? 2 : 3 : 5}
             >
@@ -203,6 +203,27 @@ const ProductsHome = ()=>{
     )
 }
 
+
+const NewArivals = ()=>{
+    return(
+        <>
+        <div className="flex-3-con">
+        <h1 className="newh1">New Arrivals</h1>
+        <div className="flex-3">
+            <div className="flexchild3"></div>
+            <div className="flexchild3"></div>
+            <div className="flexchild3"></div>
+            <div className="flexchild3"></div>
+        </div>
+        </div>
+        </>
+    )
+}
+ 
+
+
+
+
 const Homepage = () => {
     return ( 
         <>
@@ -212,10 +233,11 @@ const Homepage = () => {
       <Popularcatagory/>
       </div>
       <ProductsHome/>
+      <NewArivals/>
  
         </>
      );
 }
- 
+
 export default Homepage;
 
