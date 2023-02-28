@@ -20,6 +20,8 @@ import hearticon from '../assets/images/hearticon.png'
 import shoppingcartred from '../assets/images/shoppingcartred.png'
 import star from '../assets/images/starticon.png'
 import windowsizehook from '../hooks/Windowsizehook'
+import couch from '../assets/images/sofahome.png'
+
 
 const Newtop = ()=>{
     return(
@@ -221,7 +223,60 @@ const NewArivals = ()=>{
 }
  
 
+const BigCouch = ()=>{
+    return(
+        <>
+        <div className="coutchcontainer">
+            <div className="coutchheaddings">
+                <h1 className="wedo">We Provide You the best experience</h1>
+                <div className="grid5">
+                    <div className="gridflex">
+                <h6 className="stats">
+                    Years Of 
+                    <br />
+                    Experience
+                    <br />
+                    <br />
+                    <span className="numbercoutch">15+</span>
+                </h6>
 
+                <h6 className="stats">
+                    Awards 
+                    <br />
+                    Owned
+                    <br />
+                    <br />
+                    <span className="numbercoutch">95</span>
+                </h6>
+
+                <h6 className="stats">
+                    Furnature 
+                    <br />
+                    Sold
+                    <br />
+                    <br />
+                    <span className="numbercoutch">500</span>
+                </h6>
+                </div>
+                </div>
+            </div>
+            {/* ---------------------------------- */}
+            <p className="coutchhome-1">Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum</p>
+            <img src={couch} alt="" className="sofa" />
+        </div>
+        </>
+    )
+}
+
+const BumperBottom = ()=>{
+    return(
+        <>
+        <div className="bumpercontainerhome">
+            
+        </div>
+        </>
+    )
+}
 
 
 const Homepage = () => {
@@ -234,7 +289,8 @@ const Homepage = () => {
       </div>
       <ProductsHome/>
       <NewArivals/>
- 
+        <BigCouch/>
+        <BumperBottom/>
         </>
      );
 }
