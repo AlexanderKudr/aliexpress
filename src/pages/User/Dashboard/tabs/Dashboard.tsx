@@ -5,7 +5,8 @@ import { Edit } from "../../../../components/icons";
 import { Image, Box, Button } from "../../../../components";
 import { usePassword } from "../../../../hooks/usePassword";
 import { Controller, useForm } from "react-hook-form";
-import { FormValues, inputComponent, rules } from "../../../../utils/formDashboard";
+import { FormProps, validationRules } from "../../../../utils/forms";
+import { DashboardInput } from "../../../../components/forms/DashboardInput";
 //todo, add logic for user image
 //todo, replace onsubmit with backend schema
 //todo, add logout functionality
@@ -16,12 +17,24 @@ export default function Dashboard() {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm<FormValues>({ reValidateMode: "onSubmit" });
+  } = useForm<FormProps>({ reValidateMode: "onSubmit" });
 
-  const onSubmit = (data: FormValues) => console.log(data);
+  const onSubmit = (data: FormProps) => console.log(data);
 
-  const { Firstname, Lastname, Email, Number, Password } = rules(errors);
-  
+  const { Firstname, Lastname, Email, Number, Password } = validationRules(errors);
+  const inputComponent = (
+    field: any, //todo: add type to field
+    label: string,
+    type?: React.HTMLInputTypeAttribute | undefined
+  ) => (
+    <DashboardInput
+      {...field}
+      type={type}
+      label={label}
+      className={"input-custom"}
+      placeholder=" "
+    />
+  );
   const user = (
     <Box className={"image-container"}>
       <Image src={UserImage} width={100} height={100} alt={"user image"} />
@@ -31,7 +44,7 @@ export default function Dashboard() {
   const form = (
     <Form className="form" onSubmit={handleSubmit(onSubmit)}>
       <Box className="group">
-        <Box style={{ display: "flex", flexDirection: "column" }}>
+        <Box>
           <Controller
             name="Firstname"
             control={control}
@@ -42,7 +55,7 @@ export default function Dashboard() {
           {Firstname.error.required}
           {Firstname.error.minLength}
         </Box>
-        <Box style={{ display: "flex", flexDirection: "column" }}>
+        <Box>
           <Controller
             name="Lastname"
             control={control}

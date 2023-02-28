@@ -1,116 +1,45 @@
-import { useForm, Controller } from "react-hook-form";
+import { Controller } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { Box, Button, Header } from "../../components";
 import Form from "../../components/forms/Form";
-import { SignInput } from "../../components/forms/SignInput";
 import { Google, Logo } from "../../components/icons";
+import { useHookForm } from "../../hooks/useHookForm";
 import { usePassword } from "../../hooks/usePassword";
-import { rules } from "../../utils/formDashboard";
+import { errorMessages, FormProps, SignNames } from "../../utils/forms";
+import { inputs, signInput } from "../../utils/signInInputs";
 //rewriting into custom hook
 //finishing carousel
+
 export default function Signup() {
-  const { hidden, icons } = usePassword("group-eye-icon");
-  type SignInInputValues = {
-    Firstname: string;
-    Lastname: string;
-    Email: string;
-    Password: string;
-  };
-  type Name = keyof SignInInputValues;
-  const {
-    handleSubmit,
-    control,
-    formState: { errors },
-  } = useForm<SignInInputValues>({ reValidateMode: "onSubmit" });
-  const { Firstname, Lastname, Email, Password } = rules(errors);
+  const { hidden, icons: passwordIcons } = usePassword("group-eye-icon");
+  const { handleSubmit, control, errors } = useHookForm();
+  const onSubmit = (data: FormProps) => console.log(data);
 
-  const onSubmit = (data: SignInInputValues) => console.log(data);
-  const inputs = [
-    {
-      id: "Firstname",
-      placeholder: "Enter first name",
-      labelFor: "First name",
-      label: "First name",
-      type: "text",
-      className: "group",
-      password: false,
-      rules: Firstname,
-    },
-    {
-      id: "Lastname",
-      placeholder: "Enter last name",
-      labelFor: "Lastname",
-      label: "Last name",
-      type: "text",
-      className: "group",
-      password: false,
-      rules: Lastname,
-    },
-    {
-      id: "Email",
-      placeholder: "Enter email",
-      labelFor: "Email",
-      label: "Email",
-      type: "email",
-      className: "group",
-      password: false,
-      rules: Email,
-    },
-    {
-      id: "Password",
-      placeholder: "Enter password",
-      labelFor: "Password",
-      label: "Password",
-      type: hidden ? "text" : "password",
-      className: "group password",
-      password: true,
-      rules: Password,
-    },
-  ];
-
-  const signInputs = inputs.map((input) =>
-    input.password === false ? (
-      <Controller
-        key={input.id}
-        name={input.id as Name}
-        control={control}
-        rules={input.rules}
-        defaultValue=""
-        render={({ field }) => (
-          <SignInput
-            {...field}
-            className={input.className}
-            labelFor={input.labelFor}
-            label={input.label}
-            type={input.type}
-            id={input.id}
-            placeholder={input.placeholder}
-          />
-        )}
-      />
+  const signInputs = inputs(errors, hidden).map((input) => {
+    return input.password === false ? (
+      <Box key={input.id}>
+        <Controller
+          name={input.id as SignNames}
+          control={control}
+          rules={input.rules}
+          defaultValue=""
+          render={({ field }) => signInput(field, input)}
+        />
+        {errorMessages(input, errors, "sign-in")}
+      </Box>
     ) : (
-      <Controller
-        key={input.id}
-        name={"Password"}
-        control={control}
-        rules={input.rules}
-        defaultValue=""
-        render={({ field }) => (
-          <SignInput
-            {...field}
-            className={input.className}
-            labelFor={input.labelFor}
-            label={input.label}
-            type={input.type}
-            id={input.id}
-            placeholder={input.placeholder}
-          >
-            {icons}
-          </SignInput>
-        )}
-      />
-    )
-  );
+      <Box key={input.id}>
+        <Controller
+          name={"Password"}
+          control={control}
+          rules={input.rules}
+          defaultValue=""
+          render={({ field }) => signInput(field, input, passwordIcons)}
+        />
+        {errorMessages(input, errors, "sign-in")}
+      </Box>
+    );
+  });
 
   return (
     <Box className="signup">

@@ -35,7 +35,7 @@
       .group {
         @include flex(flex-start, center);
         flex-direction: column;
-        margin-bottom: 17px;
+        margin-bottom: 15px;
 
         label {
           font-weight: $fw-bold;
@@ -77,6 +77,9 @@
             margin-left: 10px;
           }
         }
+      }
+      & :nth-child(4) {
+        margin-bottom: 20px;
       }
     }
     & > p {

@@ -1,0 +1,13 @@
+@use "../abstracts/" as *;
+
+.error-message {
+  color: $clr-red-400;
+  font-size: $fs-sm;
+
+  &.sign-in {
+    margin-top: -10px;
+  }
+  &.dashboard {
+    margin-top: -10px;
+  }
+}

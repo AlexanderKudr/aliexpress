@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
 import { FieldErrors } from "react-hook-form";
-import { DashboardInput } from "../components/forms/DashboardInput";
+import ErrorMessage from "../components/ErrorMessage";
 
-export type FormValues = {
+type FormProps = {
+  id: string;
   Firstname: string;
   Lastname: string;
   Email: string;
@@ -14,18 +14,9 @@ export type FormValues = {
   City: string;
   Password: string;
 };
-const ErrorMessage = ({ children }: { children: ReactNode }) => (
-  <p style={{ color: "red", fontSize: "0.7rem", marginTop: "-5px" }}>{children}</p>
-);
-const inputComponent = (
-  field: any, //todo: add type to field
-  label: string,
-  type?: React.HTMLInputTypeAttribute | undefined
-) => (
-  <DashboardInput {...field} type={type} label={label} className={"input-custom"} placeholder=" " />
-);
+type SignNames = keyof FormProps;
 
-const rules = (errors: FieldErrors<FormValues>) => {
+const validationRules = (errors: FieldErrors<FormProps>) => {
   return {
     Firstname: {
       required: { value: true, message: "Required" },
@@ -92,4 +83,15 @@ const rules = (errors: FieldErrors<FormValues>) => {
     },
   };
 };
-export { inputComponent, rules };
+const typeOfErrors = ["required", "minLength", "pattern"] as const;
+const errorMessages = (input: any, errors: FieldErrors<FormProps>, className?: string) =>
+  typeOfErrors.map(
+    (type) =>
+      errors[input.id as keyof FormProps]?.type === type && (
+        <ErrorMessage key={input.id} className={className}>
+          {errors[input.id as keyof FormProps]?.message}
+        </ErrorMessage>
+      )
+  );
+export { validationRules, errorMessages, typeOfErrors };
+export type { SignNames, FormProps };
