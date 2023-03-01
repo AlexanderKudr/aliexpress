@@ -21,6 +21,7 @@ import shoppingcartred from '../assets/images/shoppingcartred.png'
 import star from '../assets/images/starticon.png'
 import windowsizehook from '../hooks/Windowsizehook'
 import couch from '../assets/images/sofahome.png'
+import { Logo } from '../components/icons'
 
 
 const Newtop = ()=>{
@@ -273,7 +274,14 @@ const BumperBottom = ()=>{
     return(
         <>
         <div className="bumpercontainerhome">
-            
+            <div className="gridstartbumper1">
+                <div className="bumperalex">
+                    <Logo/>
+                    <h3 className="alextextbumper">AlexShop</h3>
+                    
+                </div>
+            </div>
+            <div className="gridstartbumper2"></div>
         </div>
         </>
     )
