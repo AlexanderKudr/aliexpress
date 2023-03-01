@@ -1,10 +1,12 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import Root from "../pages/Root";
 import Error from "../pages/Error";
 import DashboardRoot from "../pages/User/Dashboard/Root";
 // import SignUpPage from "../pages/SignUp";
 import Homepage from "../pages/HomePage";
 import Signup from "../pages/User/Signup";
+import SignCarousel from "../layouts/SignCarousel";
+import Signin from "../pages/User/Signin";
 
 export const router = createBrowserRouter([
   {
@@ -22,30 +24,36 @@ export const router = createBrowserRouter([
       //   element: <Homepage />,
       // },
       {
-        path: "/category/:id",
+        path: "category/:id",
         element: <Root />, //todo: add category from pages
       },
       {
-        path: "/product/:id",
+        path: "product/:id",
         element: <Root />, //todo: add product from pages
       },
     ],
   },
   {
-    path: "/user/signup",
-    element: <Signup />,
-    // element: <SignUpPage />,
+    path: "user",
+    element: <SignCarousel />,
+    //todo, add loader if user exist, then redirect to dashboard
+    children: [
+      {
+        path: "signup",
+        element: <Signup />,
+      },
+      {
+        path: "signin",
+        element: <Signin />,
+      },
+      {
+        path: "",
+        element: <Navigate to="signup" />,
+      },
+    ],
   },
   {
-    path: "/user/signin",
-    element: <div>Signin in progress</div>,
-  },
-  // {
-  //   path: "/user/signin",
-  //   element: <Root />, //todo: add login from pages
-  // },
-  {
-    path: "/user/dashboard",
+    path: "user/dashboard",
     element: <DashboardRoot />,
   },
 ]);

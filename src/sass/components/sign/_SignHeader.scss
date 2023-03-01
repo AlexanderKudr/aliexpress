@@ -1,0 +1,20 @@
+@use "../../abstracts/" as *;
+
+.sign-header {
+  width: 380px;
+  margin-bottom: 20px;
+  svg {
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: $fs-2;
+    font-weight: $fw-bold;
+    color: $clr-dblack-900;
+    @include flex(flex-start, center);
+    flex-direction: column;
+  }
+  p {
+    font-weight: $fs-1;
+    color: $clr-dblack-800;
+  }
+}

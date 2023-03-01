@@ -1,111 +1,92 @@
 @use "../../abstracts/" as *;
-.signup {
-  height: 100vh;
-  @include flex(center, center);
 
-  .left-block {
-    height: 100%;
-    width: 50%;
+.signup-container {
+  height: 100vh;
+  width: 50%;
+  @include flex(center, center);
+  flex-direction: column;
+
+  .form {
+    width: 100%;
     @include flex(center, center);
     flex-direction: column;
 
-    .header {
-      width: 380px;
-      margin-bottom: 20px;
-      svg {
-        margin-bottom: 20px;
-      }
-      h1 {
-        font-size: $fs-2;
-        font-weight: $fw-bold;
-        color: $clr-dblack-900;
-        @include flex(flex-start, center);
-        flex-direction: column;
-      }
-      p {
-        font-weight: $fs-1;
-        color: $clr-dblack-800;
-      }
-    }
-    .form {
-      width: 100%;
-      @include flex(center, center);
+    .group {
+      @include flex(flex-start, center);
       flex-direction: column;
+      margin-bottom: 15px;
 
-      .group {
-        @include flex(flex-start, center);
-        flex-direction: column;
-        margin-bottom: 15px;
+      label {
+        font-weight: $fw-bold;
+        color: rgba(0, 0, 0, 0.79);
+        font-size: $fs-1;
+        margin-bottom: 3px;
+      }
 
-        label {
-          font-weight: $fw-bold;
-          color: rgba(0, 0, 0, 0.79);
-          font-size: $fs-1;
-          margin-bottom: 3px;
-        }
+      input {
+        height: 38px;
+        width: 380px;
+        border-radius: 5px;
+        border: 1px solid rgba(140, 140, 140, 0.504);
+        padding-left: 10px;
+        transition: all 0.2s linear;
 
-        input {
-          height: 38px;
-          width: 380px;
-          border-radius: 5px;
-          border: 1px solid rgba(140, 140, 140, 0.504);
-          padding-left: 10px;
+        &:focus {
+          outline: 1px solid rgba(25, 25, 25, 0.504);
           transition: all 0.2s linear;
-
-          &:focus {
-            outline: 1px solid rgba(25, 25, 25, 0.504);
-            transition: all 0.2s linear;
-          }
-        }
-        &.password {
-          position: relative;
-        }
-        &-eye-icon {
-          position: absolute;
-          cursor: pointer;
-          position: absolute;
-          right: 8px;
-          bottom: 10px;
         }
       }
-      .buttons {
-        button {
-          margin-bottom: 20px;
-        }
-        .Button-signup.google {
-          span {
-            margin-left: 10px;
-          }
-        }
+      &.password {
+        position: relative;
       }
-      & :nth-child(4) {
-        margin-bottom: 20px;
+      &-eye-icon {
+        position: absolute;
+        cursor: pointer;
+        position: absolute;
+        right: 8px;
+        bottom: 10px;
       }
     }
-    & > p {
-      font-size: $fs-sm;
-      & > span {
-        margin-right: 5px;
+    .buttons {
+      button {
+        margin-bottom: 20px;
       }
-      & > a {
-        color: $clr-blue-400;
-        &:visited {
-          color: $clr-blue-400;
+      .Button-signup {
+        @include flex(center, center);
+        &:disabled {
+          pointer-events: none;
+        }
+        .sign-text {
+          margin-left: 10px;
+          display: inline-block;
+          margin-bottom: -3px;
         }
       }
+
+      .Button-signup.google {
+        span {
+          margin-left: 10px;
+        }
+      }
+    }
+    & :nth-child(4) {
+      margin-bottom: 20px;
     }
   }
-
-  .carousel {
-    @include flex(center, center);
-    flex-direction: column;
-    width: 50%;
-    // .pictures {
-
-    // }
-    .text {
-      @include flex(center, center);
-      flex-direction: column;
+  .redirect {
+    font-size: $fs-sm;
+    & > span {
+      margin-right: 5px;
+    }
+    & > a {
+      color: $clr-blue-400;
+      transition: all 0.2s;
+      &:visited {
+        color: $clr-blue-400;
+      }
+      &:hover {
+        color: $clr-blue-200;
+      }
     }
   }
 }

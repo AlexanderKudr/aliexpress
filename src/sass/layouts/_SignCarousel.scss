@@ -1,0 +1,80 @@
+@use "../abstracts/" as *;
+.container-carousel {
+  @include flex(center, center);
+
+  .layout {
+    @include flex(center, center);
+    flex-direction: column;
+    width: 50%;
+    height: 100vh;
+    background: linear-gradient(206.43deg, $clr-blue-200, $clr-purple-200);
+    .pictures {
+      @include flex(center, center);
+      flex-direction: column;
+      margin-bottom: 30px;
+      & img {
+        border-radius: 10px;
+      }
+
+      .top-img {
+        @include flex(center, center);
+        flex-direction: row;
+        margin-bottom: 20px;
+        & :nth-child(1) {
+          transform: matrix(-0.97, 0.26, 0.26, 0.97, 0, 0);
+          margin-right: 50px;
+        }
+        & :nth-child(2) {
+          transform: rotate(25.47deg);
+        }
+      }
+      .bottom-img {
+        transform: matrix(-0.99, 0.12, 0.12, 0.99, 0, 0);
+      }
+    }
+    .text {
+      @include flex(center, center);
+      flex-direction: column;
+      & h2 {
+        font-size: $fs-2;
+        color: $clr-white;
+        margin-bottom: 10px;
+      }
+      & p {
+        font-size: $fs-1;
+        color: $clr-white;
+        text-align: center;
+        width: 300px;
+      }
+    }
+  }
+}
+.swiper {
+  width: 50vw;
+  height: 100vh;
+  &-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &-pagination-bullet {
+    background-color: #ffffff;
+    &:nth-child(2) {
+      margin: 0 10px !important;
+    }
+    opacity: 0.7;
+    width: 14px;
+    height: 14px;
+    &-active {
+      background-color: #ffbf85;
+      opacity: 1;
+    }
+  }
+}
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 90px;
+}

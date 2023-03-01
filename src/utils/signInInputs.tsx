@@ -34,7 +34,8 @@ const signInput: signInputProps = (field, input, children) => (
     {children}
   </SignInput>
 );
-const inputs = (errors: FieldErrors<FormProps>, hidden: boolean) => {
+
+const signInInputs = (errors: FieldErrors<FormProps>, hidden: boolean) => {
   const { Firstname, Lastname, Email, Password } = validationRules(errors);
   return [
     {
@@ -79,4 +80,4 @@ const inputs = (errors: FieldErrors<FormProps>, hidden: boolean) => {
     },
   ];
 };
-export { signInput, inputs };
+export { signInput, signInInputs };

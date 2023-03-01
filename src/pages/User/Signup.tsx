@@ -1,21 +1,30 @@
 import { Controller } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { Box, Button, Header } from "../../components";
+import { Box, Button } from "../../components";
 import Form from "../../components/forms/Form";
-import { Google, Logo } from "../../components/icons";
+import { Google } from "../../components/icons";
+import SignHeader from "../../components/sign/SignHeader";
+import Spinner from "../../components/Spinner";
 import { useHookForm } from "../../hooks/useHookForm";
 import { usePassword } from "../../hooks/usePassword";
 import { errorMessages, FormProps, SignNames } from "../../utils/forms";
-import { inputs, signInput } from "../../utils/signInInputs";
-//rewriting into custom hook
-//finishing carousel
+import { signInInputs, signInput } from "../../utils/signInInputs";
+//add logic on submit
 
 export default function Signup() {
   const { hidden, icons: passwordIcons } = usePassword("group-eye-icon");
-  const { handleSubmit, control, errors } = useHookForm();
-  const onSubmit = (data: FormProps) => console.log(data);
+  const { handleSubmit, control, errors, loading, setLoading } = useHookForm();
 
-  const signInputs = inputs(errors, hidden).map((input) => {
+  const onSubmit = (data: FormProps) => {
+    if (loading === true) return;
+    setLoading(true);
+    const timeout = setTimeout(() => {
+      console.log(data);
+      setLoading(false);
+    }, 1000);
+    return () => clearTimeout(timeout);
+  };
+  const mappedSignInputs = signInInputs(errors, hidden).map((input) => {
     return input.password === false ? (
       <Box key={input.id}>
         <Controller
@@ -40,44 +49,30 @@ export default function Signup() {
       </Box>
     );
   });
+  const buttons = (
+    <Box className="buttons">
+      <Button disabled={loading === true} className="Button-signup" type="submit">
+        {loading && <Spinner className="spinner-signup" />}{" "}
+        <span className="sign-text">Sign up</span>
+      </Button>
+      <Button className="Button-signup google" type={"button"}>
+        <Google />
+        <span>Sign up with Google</span>
+      </Button>
+    </Box>
+  );
 
   return (
-    <Box className="signup">
-      <Box className="left-block">
-        <Box className="header">
-          <Logo />
-          <Header variant={"h1"}>Sign up</Header>
-          <p>Welcome, please enter your details</p>
-        </Box>
-        <Form className="form" onSubmit={handleSubmit(onSubmit)}>
-          {signInputs}
-          <Box className="buttons">
-            <Button className="Button-signup" type="submit">
-              Sign up
-            </Button>
-            <Button className="Button-signup google" type="submit">
-              <Google />
-              <span>Sign up with Google</span>
-            </Button>
-          </Box>
-        </Form>
-        <p>
-          <span>Already have signed up?</span>
-          <Link to={"/user/signin"}>Click here</Link>
-        </p>
-      </Box>
-      {/* ////////////// */}
-      <div className="carousel">
-        <div className="pictures">
-          <div>1 pic</div>
-          <div>2 pic</div>
-          <div>3 pic</div>
-        </div>
-        <div className="text">
-          <h2>Lorem ipsum</h2>
-          <p style={{ width: "200px" }}>Get new fashioned clothes with 50% sale every weekend</p>
-        </div>
-      </div>
+    <Box className="signup-container">
+      <SignHeader variant="up" />
+      <Form className="form" onSubmit={handleSubmit(onSubmit)}>
+        {mappedSignInputs}
+        {buttons}
+      </Form>
+      <p className="redirect">
+        <span>Already have signed up?</span>
+        <Link to={"/user/signin"}>Click here</Link>
+      </p>
     </Box>
   );
 }
