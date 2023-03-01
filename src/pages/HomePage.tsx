@@ -205,7 +205,6 @@ const ProductsHome = ()=>{
     )
 }
 
-
 const NewArivals = ()=>{
     return(
         <>
@@ -226,6 +225,7 @@ const NewArivals = ()=>{
 const BigCouch = ()=>{
     return(
         <>
+         <div className="block">
         <div className="coutchcontainer">
             <div className="coutchheaddings">
                 <h1 className="wedo">We Provide You the best experience</h1>
@@ -263,6 +263,7 @@ const BigCouch = ()=>{
             {/* ---------------------------------- */}
             <p className="coutchhome-1">Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum</p>
             <img src={couch} alt="" className="sofa" />
+        </div>
         </div>
         </>
     )
