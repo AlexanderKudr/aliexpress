@@ -23,6 +23,10 @@ import windowsizehook from '../hooks/Windowsizehook'
 import couch from '../assets/images/sofahome.png'
 import { Logo } from '../components/icons'
 import { Link } from 'react-router-dom'
+import tel from '../assets/images/telei.png'
+import twitter from '../assets/images/twitter.png'
+import facebook from '../assets/images/facebook.png'
+import insta from '../assets/images/instagram.png'
 
 
 const Newtop = ()=>{
@@ -281,18 +285,24 @@ const BumperBottom = ()=>{
                     <h3 className="alextextbumper">AlexShop</h3>
                 </div>
                     <p className="bumperpar">AlexShop is a worldwide shop which has more than 100 branches across the world</p>
+                    <div className="bumpericonshome">
+                        <img src={facebook} alt="" className='iconsbump' />
+                        <img src={twitter} alt="" className='iconsbump' />
+                        <img src={insta} alt="" className='iconsbump' />
+                        <img src={tel} alt="" className='iconsbump' />
+                    </div>
             </div>
             <div className="gridstartbumper2">
                 <h6 className="bumpertitle">Our Products</h6>
                 <h6 className="bumpertitle">Get To Know Us </h6>
                 <h6 className="bumpertitle">Need Help? </h6>
-                <Link to='#' className='bumperlink'><p>Chair</p></Link>
-                <Link to='#' className='bumperlink'><p>Pet’s house</p></Link>
-                <Link to='#' className='bumperlink'><p>Women clothes</p></Link>
-                <Link to='#' className='bumperlink'><p>Mens shoes</p></Link>
-                <Link to='#' className='bumperlink'><p>About us</p></Link>
-                <Link to='#' className='bumperlink'><p>FAQ</p></Link>
-                <Link to='#' className='bumperlink'><p>Contact us</p></Link>
+                <p className='bumperlink bumperlink2'><Link to='#'>Chair</Link></p>
+                <p className='bumperlink bumperlink2'><Link to='#'>Pet’s house</Link></p>
+                <p className='bumperlink bumperlink2'><Link to='#'>Women clothes</Link></p>
+                <p className='bumperlink bumperlink2'><Link to='#'>Mens shoes</Link></p>
+                <p className='bumperlink bumperlink3 bumperlink3row'><Link to='#'>About us</Link></p>
+                <p className='bumperlink bumperlink4 bumperlink3row'><Link to='#'>FAQ</Link></p>
+                <p className='bumperlink bumperlink4 bumperlink4row'><Link to='#'>Contact us</Link></p>
             </div>
         </div>
         </>
