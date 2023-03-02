@@ -22,6 +22,7 @@ import star from '../assets/images/starticon.png'
 import windowsizehook from '../hooks/Windowsizehook'
 import couch from '../assets/images/sofahome.png'
 import { Logo } from '../components/icons'
+import { Link } from 'react-router-dom'
 
 
 const Newtop = ()=>{
@@ -278,10 +279,21 @@ const BumperBottom = ()=>{
                 <div className="bumperalex">
                     <Logo/>
                     <h3 className="alextextbumper">AlexShop</h3>
-                    
                 </div>
+                    <p className="bumperpar">AlexShop is a worldwide shop which has more than 100 branches across the world</p>
             </div>
-            <div className="gridstartbumper2"></div>
+            <div className="gridstartbumper2">
+                <h6 className="bumpertitle">Our Products</h6>
+                <h6 className="bumpertitle">Get To Know Us </h6>
+                <h6 className="bumpertitle">Need Help? </h6>
+                <Link to='#' className='bumperlink'><p>Chair</p></Link>
+                <Link to='#' className='bumperlink'><p>Pet’s house</p></Link>
+                <Link to='#' className='bumperlink'><p>Women clothes</p></Link>
+                <Link to='#' className='bumperlink'><p>Mens shoes</p></Link>
+                <Link to='#' className='bumperlink'><p>About us</p></Link>
+                <Link to='#' className='bumperlink'><p>FAQ</p></Link>
+                <Link to='#' className='bumperlink'><p>Contact us</p></Link>
+            </div>
         </div>
         </>
     )
