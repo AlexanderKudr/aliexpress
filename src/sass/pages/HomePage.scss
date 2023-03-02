@@ -343,7 +343,7 @@
         width: 96%;
         margin-left: 1.5rem;
         font-weight: bold;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
     .flex-3{
         display: flex;
@@ -363,16 +363,59 @@
             flex: 1 0 calc(30% - 10px);
         }
         .flexchild3:nth-child(3){
-            background-color: #FFBF85;
+            background-color: black;
             flex: 1 0 calc(30% - 10px);
+            color: white;
+            .blackheaddingnew{
+                font-weight: bold;
+                font-size: calc(1.5vw + 2vh + 1vmin);
+                position: absolute;
+                margin-left: 0.5rem;
+                top: 3rem;
+                margin-bottom: 0.3rem;
+            }
+            .blacknewpar{
+                position: absolute;
+                top: 12rem;
+                margin-left: 0.5rem;
+                font-size: 10px;
+            }
         }
         .flexchild3:nth-child(4){
-            background-color: aqua;
+            background-color: #F6E2FF;
             flex: 1 0 calc(50% - 10px);
+            .suitnew{
+                position: absolute;
+                font-size: calc(2vw + 2vh + 0.5vw);
+                font-weight: bolder;
+                width: min-content;
+                margin-left: calc(10% - 2px);
+                background: linear-gradient(222.2deg, #333333 -21.74%, #DC8FFF 147.65%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+                margin-top: 1.3rem;
+            }
+            .idsuit{
+                position: absolute;
+                bottom: calc(7vh - 2vw);
+                margin-left: calc(10% - 2px);
+                color: #565656;
+            }
+            .suit{
+                position: absolute;
+                right: -0.3rem;
+                width: calc(50% - 2vw);
+                height: 100%;
+                margin-top: 0rem;
+                min-width: 10rem;
+            }
         }
         .flexchild3{
            margin: 0.3rem;
            border-radius: 10px;
+           position: relative;
         }
     }
 }

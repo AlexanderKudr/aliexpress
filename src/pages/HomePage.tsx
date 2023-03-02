@@ -27,7 +27,7 @@ import tel from '../assets/images/telei.png'
 import twitter from '../assets/images/twitter.png'
 import facebook from '../assets/images/facebook.png'
 import insta from '../assets/images/instagram.png'
-
+import suit from '../assets/images/suit.png'
 
 const Newtop = ()=>{
     return(
@@ -219,8 +219,15 @@ const NewArivals = ()=>{
         <div className="flex-3">
             <div className="flexchild3"></div>
             <div className="flexchild3"></div>
-            <div className="flexchild3"></div>
-            <div className="flexchild3"></div>
+            <div className="flexchild3">
+                <h2 className="blackheaddingnew">Black suit was made to be comfortable and look decent</h2>
+                <p className="blacknewpar">Nowdays wearing suits have become more common in either adolescent or even elder people.</p>
+            </div>
+            <div className="flexchild3">
+                <h2 className="suitnew">Three elegant suit</h2>
+                <h4 className="idsuit">IDR:3395009</h4>
+                <img src={suit} alt="" className="suit" />
+            </div>
         </div>
         </div>
         </>
