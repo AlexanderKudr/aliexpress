@@ -4,4 +4,4 @@
 @forward "./CustomInput";
 @forward "./ErrorMessage";
 @forward "./Spinner";
-@forward "../components/sign/SignHeader";
+@use "sign";

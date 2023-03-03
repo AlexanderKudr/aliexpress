@@ -7,5 +7,6 @@ import Image from "./Image";
 import Section from "./Section";
 import NavInput from "./forms/NavInput";
 import Dropdown from "./Dropdown";
+import Spinner from "./Spinner";
 
-export { Aside, Box, BrandLogo, Button, Header, Image, Section, NavInput, Dropdown };
+export { Aside, Box, BrandLogo, Button, Header, Image, Section, NavInput, Dropdown, Spinner };

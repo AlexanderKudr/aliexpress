@@ -84,8 +84,9 @@ const validationRules = (errors: FieldErrors<FormProps>) => {
   };
 };
 const typeOfErrors = ["required", "minLength", "pattern"] as const;
-const errorMessages = (input: any, errors: FieldErrors<FormProps>, className?: string) =>
-  typeOfErrors.map(
+const errorMessages = (input: any, errors: FieldErrors<FormProps>, className?: string) => {
+  console.log("fired");
+  return typeOfErrors.map(
     (type) =>
       errors[input.id as keyof FormProps]?.type === type && (
         <ErrorMessage key={input.id} className={className}>
@@ -93,5 +94,6 @@ const errorMessages = (input: any, errors: FieldErrors<FormProps>, className?: s
         </ErrorMessage>
       )
   );
+};
 export { validationRules, errorMessages, typeOfErrors };
 export type { SignNames, FormProps };
