@@ -52,32 +52,33 @@
     }
   }
 }
-.swiper {
-  width: 50vw;
-  height: 100vh;
-  &-slide {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
 
-  &-pagination-bullet {
-    background-color: #ffffff;
-    &:nth-child(2) {
-      margin: 0 10px !important;
-    }
-    opacity: 0.7;
-    width: 14px;
-    height: 14px;
-    &-active {
-      background-color: #ffbf85;
-      opacity: 1;
-    }
-  }
-}
-.swiper-horizontal > .swiper-pagination-bullets,
-.swiper-pagination-bullets.swiper-pagination-horizontal,
-.swiper-pagination-custom,
-.swiper-pagination-fraction {
-  bottom: 90px;
-}
+// .swiper {
+//   width: 50vw;
+//   height: 100vh;
+//   &-slide {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//   }
+
+//   &-pagination-bullet {
+//     background-color: #ffffff;
+//     &:nth-child(2) {
+//       margin: 0 10px !important;
+//     }
+//     opacity: 0.7;
+//     width: 14px;
+//     height: 14px;
+//     &-active {
+//       background-color: #ffbf85;
+//       opacity: 1;
+//     }
+//   }
+// }
+// .swiper-horizontal > .swiper-pagination-bullets,
+// .swiper-pagination-bullets.swiper-pagination-horizontal,
+// .swiper-pagination-custom,
+// .swiper-pagination-fraction {
+//   bottom: 90px;
+// }

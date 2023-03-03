@@ -24,6 +24,7 @@ export default function SignCarousel() {
       <Outlet />
       <Box className="layout">
         <Swiper
+          style={{ width: "50vh", height: "100vh" }}
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectFade]}
           spaceBetween={0}
           slidesPerView={1}
