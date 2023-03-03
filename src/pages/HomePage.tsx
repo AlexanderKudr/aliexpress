@@ -20,6 +20,14 @@ import hearticon from '../assets/images/hearticon.png'
 import shoppingcartred from '../assets/images/shoppingcartred.png'
 import star from '../assets/images/starticon.png'
 import windowsizehook from '../hooks/Windowsizehook'
+import couch from '../assets/images/sofahome.png'
+import { Logo } from '../components/icons'
+import { Link } from 'react-router-dom'
+import tel from '../assets/images/telei.png'
+import twitter from '../assets/images/twitter.png'
+import facebook from '../assets/images/facebook.png'
+import insta from '../assets/images/instagram.png'
+import suit from '../assets/images/suit.png'
 
 const Newtop = ()=>{
     return(
@@ -203,7 +211,6 @@ const ProductsHome = ()=>{
     )
 }
 
-
 const NewArivals = ()=>{
     return(
         <>
@@ -212,8 +219,15 @@ const NewArivals = ()=>{
         <div className="flex-3">
             <div className="flexchild3"></div>
             <div className="flexchild3"></div>
-            <div className="flexchild3"></div>
-            <div className="flexchild3"></div>
+            <div className="flexchild3">
+                <h2 className="blackheaddingnew">Black suit was made to be comfortable and look decent</h2>
+                <p className="blacknewpar">Nowdays wearing suits have become more common in either adolescent or even elder people.</p>
+            </div>
+            <div className="flexchild3">
+                <h2 className="suitnew">Three elegant suit</h2>
+                <h4 className="idsuit">IDR:3395009</h4>
+                <img src={suit} alt="" className="suit" />
+            </div>
         </div>
         </div>
         </>
@@ -221,7 +235,86 @@ const NewArivals = ()=>{
 }
  
 
+const BigCouch = ()=>{
+    return(
+        <>
+         <div className="block">
+        <div className="coutchcontainer">
+            <div className="coutchheaddings">
+                <h1 className="wedo">We Provide You the best experience</h1>
+                <div className="grid5">
+                    <div className="gridflex">
+                <h6 className="stats">
+                    Years Of 
+                    <br />
+                    Experience
+                    <br />
+                    <br />
+                    <span className="numbercoutch">15+</span>
+                </h6>
 
+                <h6 className="stats">
+                    Awards 
+                    <br />
+                    Owned
+                    <br />
+                    <br />
+                    <span className="numbercoutch">95</span>
+                </h6>
+
+                <h6 className="stats">
+                    Furnature 
+                    <br />
+                    Sold
+                    <br />
+                    <br />
+                    <span className="numbercoutch">500</span>
+                </h6>
+                </div>
+                </div>
+            </div>
+            {/* ---------------------------------- */}
+            <p className="coutchhome-1">Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum</p>
+            <img src={couch} alt="" className="sofa" />
+        </div>
+        </div>
+        </>
+    )
+}
+
+const BumperBottom = ()=>{
+    return(
+        <>
+        <div className="bumpercontainerhome">
+            <div className="gridstartbumper1">
+                <div className="bumperalex">
+                    <Logo/>
+                    <h3 className="alextextbumper">AlexShop</h3>
+                </div>
+                    <p className="bumperpar">AlexShop is a worldwide shop which has more than 100 branches across the world</p>
+                    <div className="bumpericonshome">
+                        <img src={facebook} alt="" className='iconsbump' />
+                        <img src={twitter} alt="" className='iconsbump' />
+                        <img src={insta} alt="" className='iconsbump' />
+                        <img src={tel} alt="" className='iconsbump' />
+                    </div>
+            </div>
+            <div className="gridstartbumper2">
+                <h6 className="bumpertitle">Our Products</h6>
+                <h6 className="bumpertitle">Get To Know Us </h6>
+                <h6 className="bumpertitle">Need Help? </h6>
+                <p className='bumperlink bumperlink2'><Link to='#'>Chair</Link></p>
+                <p className='bumperlink bumperlink2'><Link to='#'>Pet’s house</Link></p>
+                <p className='bumperlink bumperlink2'><Link to='#'>Women clothes</Link></p>
+                <p className='bumperlink bumperlink2'><Link to='#'>Mens shoes</Link></p>
+                <p className='bumperlink bumperlink3 bumperlink3row'><Link to='#'>About us</Link></p>
+                <p className='bumperlink bumperlink4 bumperlink3row'><Link to='#'>FAQ</Link></p>
+                <p className='bumperlink bumperlink4 bumperlink4row'><Link to='#'>Contact us</Link></p>
+            </div>
+        </div>
+        </>
+    )
+}
 
 
 const Homepage = () => {
@@ -234,7 +327,8 @@ const Homepage = () => {
       </div>
       <ProductsHome/>
       <NewArivals/>
- 
+        <BigCouch/>
+        <BumperBottom/>
         </>
      );
 }
