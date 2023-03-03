@@ -12,8 +12,8 @@ import { signInInputs } from "../../utils/signInInputs";
 //add logic on submit
 
 export default function Signup() {
-  const { hidden, icons: passwordIcons } = usePassword("group-eye-icon");
-  const { handleSubmit, control, errors, loading, setLoading } = useHookForm();
+  const { hidden } = usePassword("group-eye-icon");
+  const { handleSubmit, errors, loading, setLoading } = useHookForm();
 
   const onSubmit = (data: FormProps) => {
     if (loading === true) return;
@@ -24,22 +24,9 @@ export default function Signup() {
     }, 1000);
     return () => clearTimeout(timeout);
   };
-
-  const buttons = (
-    <Box className="buttons">
-      <Button disabled={loading === true} className="Button-signup" type="submit">
-        {loading && <Spinner className="spinner-signup" />}{" "}
-        <span className="sign-text">Sign up</span>
-      </Button>
-      <Button className="Button-signup google" type={"button"}>
-        <Google />
-        <span>Sign up with Google</span>
-      </Button>
-    </Box>
-  );
-
+console.log(errors, "errors");
   return (
-    <Box className="signup-container">
+    <Box className="sign-container">
       <SignHeader variant="up" />
       <Form className="form" onSubmit={handleSubmit(onSubmit)}>
         {signInInputs(errors, hidden).map((input) => (
@@ -53,10 +40,7 @@ export default function Signup() {
         ))}
         {buttons}
       </Form>
-      <p className="redirect">
-        <span>Already have signed up?</span>
-        <Link to={"/user/signin"}>Click here</Link>
-      </p>
+      <SignText link={"/user/signin"} />
     </Box>
   );
 }

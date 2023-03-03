@@ -1,6 +1,5 @@
 @use "../../abstracts/" as *;
-
-.signin-container {
+.sign-container {
   height: 100vh;
   width: 50%;
   @include flex(center, center);
