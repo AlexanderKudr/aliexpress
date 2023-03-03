@@ -4,6 +4,7 @@
   button {
     margin-bottom: 20px;
     width: 55vw;
+    height: 40px;
     max-width: 380px;
     @include breakpoint(sm) {
       max-width: 100%;
