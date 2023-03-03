@@ -1,14 +1,14 @@
-import { Controller } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { Box, Button } from "../../components";
 import Form from "../../components/forms/Form";
 import { Google } from "../../components/icons";
 import SignHeader from "../../components/sign/SignHeader";
+import SignInputs from "../../components/sign/SignInputs";
 import Spinner from "../../components/Spinner";
 import { useHookForm } from "../../hooks/useHookForm";
 import { usePassword } from "../../hooks/usePassword";
-import { errorMessages, FormProps, SignNames } from "../../utils/forms";
-import { signInInputs, signInput } from "../../utils/signInInputs";
+import { FormProps } from "../../utils/forms";
+import { signInInputs } from "../../utils/signInInputs";
 //add logic on submit
 
 export default function Signup() {
@@ -24,31 +24,7 @@ export default function Signup() {
     }, 1000);
     return () => clearTimeout(timeout);
   };
-  const mappedSignInputs = signInInputs(errors, hidden).map((input) => {
-    return input.password === false ? (
-      <Box key={input.id}>
-        <Controller
-          name={input.id as SignNames}
-          control={control}
-          rules={input.rules}
-          defaultValue=""
-          render={({ field }) => signInput(field, input)}
-        />
-        {errorMessages(input, errors, "sign-in")}
-      </Box>
-    ) : (
-      <Box key={input.id}>
-        <Controller
-          name={"Password"}
-          control={control}
-          rules={input.rules}
-          defaultValue=""
-          render={({ field }) => signInput(field, input, passwordIcons)}
-        />
-        {errorMessages(input, errors, "sign-in")}
-      </Box>
-    );
-  });
+
   const buttons = (
     <Box className="buttons">
       <Button disabled={loading === true} className="Button-signup" type="submit">
@@ -66,7 +42,15 @@ export default function Signup() {
     <Box className="signup-container">
       <SignHeader variant="up" />
       <Form className="form" onSubmit={handleSubmit(onSubmit)}>
-        {mappedSignInputs}
+        {signInInputs(errors, hidden).map((input) => (
+          <SignInputs
+            key={input.id}
+            input={input}
+            control={control}
+            errors={errors}
+            passwordIcons={passwordIcons}
+          />
+        ))}
         {buttons}
       </Form>
       <p className="redirect">
