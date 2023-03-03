@@ -23,6 +23,26 @@
         padding-left: 10px;
         width: 100%;
 
+        &::-webkit-input-placeholder {
+          font-weight: $fw-thin;
+          opacity: 0.5;
+        }
+
+        &::-moz-placeholder {
+          font-weight: $fw-thin;
+          opacity: 0.5;
+        }
+
+        &:-ms-input-placeholder {
+          font-weight: $fw-thin;
+          opacity: 0.5;
+        }
+
+        &::-ms-input-placeholder {
+          font-weight: $fw-thin;
+          opacity: 0.5;
+        }
+
         &::placeholder {
           font-weight: $fw-thin;
           opacity: 0.5;

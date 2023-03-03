@@ -174,6 +174,18 @@
     .signup-Google{
       border: 1px solid grey;
     }
+    .input-sign::-webkit-input-placeholder{
+      padding-left: 0.5rem;
+    }
+    .input-sign::-moz-placeholder{
+      padding-left: 0.5rem;
+    }
+    .input-sign:-ms-input-placeholder{
+      padding-left: 0.5rem;
+    }
+    .input-sign::-ms-input-placeholder{
+      padding-left: 0.5rem;
+    }
     .input-sign::placeholder{
       padding-left: 0.5rem;
     }
