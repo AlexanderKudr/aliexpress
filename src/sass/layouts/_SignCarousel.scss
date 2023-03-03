@@ -3,6 +3,9 @@
   @include flex(center, center);
 
   .layout {
+    @include breakpoint(sm) {
+      display: none;
+    }
     @include flex(center, center);
     flex-direction: column;
     width: 50%;

@@ -19,7 +19,12 @@
 
     input {
       height: 38px;
-      width: 380px;
+      width: 55vw;
+      max-width: 380px;
+      @include breakpoint(sm) {
+        max-width: 100%;
+        width: 65vw
+      }
       border-radius: 5px;
       border: 1px solid rgba(140, 140, 140, 0.504);
       padding-left: 10px;

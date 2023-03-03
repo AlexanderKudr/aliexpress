@@ -1,20 +1,8 @@
 import { FieldErrors } from "react-hook-form";
 import ErrorMessage from "../components/ErrorMessage";
+import { FormProps } from "../types/components/forms";
 
-type FormProps = {
-  id: string;
-  Firstname: string;
-  Lastname: string;
-  Email: string;
-  Number: string;
-  Address: string;
-  Country: string;
-  State: string;
-  Zip: string;
-  City: string;
-  Password: string;
-};
-type SignNames = keyof FormProps;
+
 
 const validationRules = (errors: FieldErrors<FormProps>) => {
   return {
@@ -84,7 +72,7 @@ const validationRules = (errors: FieldErrors<FormProps>) => {
   };
 };
 const typeOfErrors = ["required", "minLength", "pattern"] as const;
-const errorMessages = (input: any, errors: FieldErrors<FormProps>, className?: string) => {
+const errorMessages = (input: any /* maybe <T>? or research */, errors: FieldErrors<FormProps>, className?: string) => {
   console.log("fired");
   return typeOfErrors.map(
     (type) =>
@@ -96,4 +84,4 @@ const errorMessages = (input: any, errors: FieldErrors<FormProps>, className?: s
   );
 };
 export { validationRules, errorMessages, typeOfErrors };
-export type { SignNames, FormProps };
+export type { FormProps };

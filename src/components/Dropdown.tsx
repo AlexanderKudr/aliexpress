@@ -1,4 +1,4 @@
-import { Dropdown as props } from "../types/components";
+import { Dropdown as props } from "../types/components/ui";
 
 export default function Dropdown({ className, children, ...props }: props) {
   return (

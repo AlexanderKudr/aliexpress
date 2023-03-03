@@ -1,6 +1,6 @@
 import { Box, Header } from "./index";
 import { Logo } from "./icons";
-import { BrandLogo as props } from "../types/components";
+import { BrandLogo as props } from "../types/components/ui";
 
 export default function BrandLogo({ className }: props) {
   return (

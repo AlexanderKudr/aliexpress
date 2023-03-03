@@ -3,6 +3,12 @@
 .sign-buttons {
   button {
     margin-bottom: 20px;
+    width: 55vw;
+    max-width: 380px;
+    @include breakpoint(sm) {
+      max-width: 100%;
+      width: 65vw;
+    }
   }
   .Button-sign {
     @include flex(center, center);

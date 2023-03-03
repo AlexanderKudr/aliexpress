@@ -1,4 +1,4 @@
-import { HeadingProps as props } from "../types/components";
+import { HeadingProps as props } from "../types/components/ui";
 
 const Header = ({ variant, children, className, onClick }: props) => {
   const Heading = variant;

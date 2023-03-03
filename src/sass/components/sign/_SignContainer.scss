@@ -1,7 +1,13 @@
 @use "../../abstracts/" as *;
+
 .sign-container {
   height: 100vh;
   width: 50%;
   @include flex(center, center);
   flex-direction: column;
+
+  @include breakpoint(sm) {
+    width: 100%;
+    margin: 10px 0;
+  }
 }

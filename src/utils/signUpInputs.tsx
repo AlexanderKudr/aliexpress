@@ -1,26 +1,10 @@
-import { ControllerRenderProps, FieldErrors } from "react-hook-form";
+import {  FieldErrors } from "react-hook-form";
 import { SignInput } from "../components/forms/SignInput";
 import { FormProps, validationRules } from "./forms";
+import { controlledInput as props } from "../types/components/forms";
 
-type Input = {
-  id: string;
-  placeholder: string;
-  labelFor: string;
-  label: string;
-  type: string;
-  className: string;
-  password: boolean;
-  rules: Record<string, unknown>; // Replace with the actual type of rules
-};
-type signInputProps = (
-  field:
-    | ControllerRenderProps<FormProps, keyof FormProps>
-    | ControllerRenderProps<FormProps, "Password">,
-  input: Input,
-  children?: React.ReactNode
-) => JSX.Element;
 
-const signInput: signInputProps = (field, input, children) => (
+const controlledInput: props = (field, input, children) => (//todo: after logic is done, remove into forms
   <SignInput
     {...field}
     className={input.className}
@@ -80,5 +64,4 @@ const signUpInputs = (errors: FieldErrors<FormProps>, hidden: boolean) => {
     },
   ];
 };
-export { signInput, signUpInputs };
-export type { Input };
+export { controlledInput, signUpInputs };

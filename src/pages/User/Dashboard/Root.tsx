@@ -4,7 +4,7 @@ import Sidebar from "../../../layouts/Sidebar";
 import Dashboard from "./tabs/Dashboard";
 import Profile from "./tabs/Profile";
 import Settings from "./tabs/Settings";
-import { Tabs as props } from "../../../types/components";
+import { Tabs as props } from "../../../types/components/ui";
 
 export default function Root() {
   const tabs: props = { 0: <Dashboard />, 1: <Settings />, 2: <Profile /> };

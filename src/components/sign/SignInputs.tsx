@@ -1,7 +1,8 @@
 import { Box } from "../../components";
 import { Control, Controller, FieldErrors } from "react-hook-form";
-import { errorMessages, FormProps, SignNames } from "../../utils/forms";
-import { signInInputs, signInput } from "../../utils/signInInputs";
+import { errorMessages, FormProps } from "../../utils/forms";
+import { controlledInput } from "../../utils/signUpInputs";
+import { SignNames } from "../../types/components/forms";
 
 type SignInputsProps<T> = {
   input: T;
@@ -9,12 +10,10 @@ type SignInputsProps<T> = {
   errors: FieldErrors<FormProps>;
   passwordIcons: JSX.Element;
 };
-export default function SignInputs({
-  input,
-  control,
-  errors,
-  passwordIcons,
-}: SignInputsProps<any>) {
+
+export default function SignInputs(
+  { input, control, errors, passwordIcons }: SignInputsProps<any> /*<T> or research*/
+) {
   const noPasswordIcon = (
     <Box key={input.id}>
       <Controller
@@ -22,7 +21,7 @@ export default function SignInputs({
         control={control}
         rules={input.rules}
         defaultValue=""
-        render={({ field }) => signInput(field, input)}
+        render={({ field }) => controlledInput(field, input)}
       />
       {errorMessages(input, errors, "sign-in")}
     </Box>
@@ -35,7 +34,7 @@ export default function SignInputs({
         control={control}
         rules={input.rules}
         defaultValue=""
-        render={({ field }) => signInput(field, input, passwordIcons)}
+        render={({ field }) => controlledInput(field, input, passwordIcons)}
       />
       {errorMessages(input, errors, "sign-in")}
     </Box>

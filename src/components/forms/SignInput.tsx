@@ -1,5 +1,5 @@
 import Box from "../Box";
-import { SignInputProps } from "../../types/components";
+import { SignInputProps } from "../../types/components/ui";
 import { forwardRef } from "react";
 type Ref = HTMLInputElement;
 

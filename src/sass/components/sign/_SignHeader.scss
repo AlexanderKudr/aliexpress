@@ -1,7 +1,12 @@
 @use "../../abstracts/" as *;
 
 .sign-header {
-  width: 380px;
+  width: 55vw;
+  max-width: 380px;
+  @include breakpoint(sm) {
+    max-width: 100%;
+    width: 65vw
+  }
   margin-bottom: 20px;
   svg {
     margin-bottom: 20px;
