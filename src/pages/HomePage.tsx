@@ -29,6 +29,7 @@ import facebook from '../assets/images/facebook.png'
 import insta from '../assets/images/instagram.png'
 import suit from '../assets/images/suit.png'
 
+
 const Newtop = ()=>{
     return(
         <>

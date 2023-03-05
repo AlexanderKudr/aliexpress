@@ -368,7 +368,7 @@
             color: white;
             .blackheaddingnew{
                 font-weight: bold;
-                font-size: calc(1.5vw + 2vh + 1vmin);
+                font-size: calc(1.5vw + 1vh + 1vmin);
                 position: absolute;
                 margin-left: 0.5rem;
                 top: 3rem;
@@ -376,7 +376,7 @@
             }
             .blacknewpar{
                 position: absolute;
-                top: 12rem;
+                bottom: calc(1.5vh + 0.5vw + 2vw);
                 margin-left: 0.5rem;
                 font-size: 10px;
             }
@@ -386,7 +386,7 @@
             flex: 1 0 calc(50% - 10px);
             .suitnew{
                 position: absolute;
-                font-size: calc(2vw + 2vh + 0.5vw);
+                font-size: calc(0.8vw + 2vh + 0.5vw);
                 font-weight: bolder;
                 width: min-content;
                 margin-left: calc(10% - 2px);
@@ -591,6 +591,7 @@
         }
     }
 }
+
 
 
 
