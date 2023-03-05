@@ -1,12 +1,12 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
 import Root from "../pages/Root";
 import Error from "../pages/Error";
-import DashboardRoot from "../pages/User/Dashboard/Root";
-// import SignUpPage from "../pages/SignUp";
-import Homepage from "../pages/HomePage";
 import Signup from "../pages/User/Signup";
-import SignCarousel from "../layouts/SignCarousel";
 import Signin from "../pages/User/Signin";
+import Product from "../pages/Product";
+import Homepage from "../pages/HomePage";
+import SignCarousel from "../layouts/SignCarousel";
+import DashboardRoot from "../pages/User/Dashboard/Root";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 
 export const router = createBrowserRouter([
   {
@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "product/:id",
-        element: <Root />, //todo: add product from pages
+        element: <Product />, //todo: add product from pages
       },
     ],
   },
