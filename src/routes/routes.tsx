@@ -1,22 +1,18 @@
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import Root from "../pages/Root";
 import Error from "../pages/Error";
-import Signup from "../pages/User/Signup";
-import Signin from "../pages/User/Signin";
-import Product from "../pages/Product";
-import Homepage from "../pages/HomePage";
-import SignCarousel from "../layouts/SignCarousel";
 import DashboardRoot from "../pages/User/Dashboard/Root";
-import { createBrowserRouter, Navigate } from "react-router-dom";
+// import SignUpPage from "../pages/SignUp";
+import Homepage from "../pages/HomePage";
+import Signup from "../pages/User/Signup";
+import SignCarousel from "../layouts/SignCarousel";
+import Signin from "../pages/User/Signin";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <>
-        <Root />
-        <Homepage />
-      </>
-    ),
+    element: <Homepage/>
+    ,
     errorElement: <Error />,
     children: [
       // {
@@ -29,7 +25,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "product/:id",
-        element: <Product />, //todo: add product from pages
+        element: <Root />, //todo: add product from pages
       },
     ],
   },

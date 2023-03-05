@@ -28,6 +28,7 @@ import twitter from '../assets/images/twitter.png'
 import facebook from '../assets/images/facebook.png'
 import insta from '../assets/images/instagram.png'
 import suit from '../assets/images/suit.png'
+import Root from './Root'
 
 const Newtop = ()=>{
     return(
@@ -320,7 +321,7 @@ const BumperBottom = ()=>{
 const Homepage = () => {
     return ( 
         <>
-       
+       <Root/>
       <Newtop/>
       <div className="container-11">
       <Popularcatagory/>
