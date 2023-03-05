@@ -7,11 +7,12 @@ import Homepage from "../pages/HomePage";
 import Signup from "../pages/User/Signup";
 import SignCarousel from "../layouts/SignCarousel";
 import Signin from "../pages/User/Signin";
+import Product from "../pages/Product";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Homepage/>
+    element: <Root/>
     ,
     errorElement: <Error />,
     children: [
@@ -19,13 +20,14 @@ export const router = createBrowserRouter([
       //   index: true,
       //   element: <Homepage />,
       // },
+
       {
         path: "category/:id",
         element: <Root />, //todo: add category from pages
       },
       {
         path: "product/:id",
-        element: <Root />, //todo: add product from pages
+        element: <Product />, //todo: add product from pages
       },
     ],
   },
