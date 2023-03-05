@@ -3,7 +3,7 @@ import Navbar from "../layouts/Navbar";
 export default function Product() {
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <div>Hello Product</div>
     </>
   );
